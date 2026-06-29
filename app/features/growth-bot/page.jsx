@@ -8,6 +8,20 @@ import { FeatureSubNav, FeaturePrevNext } from '@/components/FeatureSubNav';
 export const metadata = {
   title: 'Growth Bot — AI Listings, Auto Price Drops, Smart Offers | Vintify',
   description: 'AI writes your Vinted listings, drops prices on stale items automatically, handles offers based on your rules, rewrites for reposting, and suggests inbox replies. Sell more in less time.',
+  keywords: ['vinted growth bot', 'vinted AI listing writer', 'vinted auto price drop', 'vinted smart offers', 'vinted auto repost', 'vinted listing automation', 'vinted price drop bot', 'vinted AI listings'],
+  alternates: {
+    canonical: 'https://vintify.co.uk/features/growth-bot',
+  },
+  openGraph: {
+    title: 'Vintify Growth Bot — AI Listings, Auto Price Drops & Smart Offers',
+    description: 'AI listing writer, automatic price drops, Smart Offers, auto-repost, and AI reply suggestions.',
+    url: 'https://vintify.co.uk/features/growth-bot',
+  },
+  twitter: {
+    title: 'Vintify Growth Bot — AI Listings, Auto Price Drops & Smart Offers',
+    description: 'AI listing writer, automatic price drops, Smart Offers, auto-repost, and AI reply suggestions.',
+    card: 'summary_large_image',
+  },
 };
 
 const PROBLEMS = [
@@ -177,9 +191,9 @@ export default function GrowthBotPage() {
       </section>
 
       {/* ── Problem → Solution sections ── */}
-      <section className="bg-ink-100 py-24">
+      <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-16 text-center">
+          <div className="mb-8 sm:mb-16 text-center">
             <p className="section-label mb-3">The Problems We Solve</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
               The growth bottlenecks — eliminated.
@@ -188,7 +202,7 @@ export default function GrowthBotPage() {
 
           <div className="space-y-8">
             {PROBLEMS.map((item, i) => (
-              <div key={i} className="grid gap-6 rounded-2xl border border-ink-200 bg-white p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
+              <div key={i} className="grid gap-6 rounded-2xl border border-ink-200 bg-white p-5 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
                 <div>
                   <div className="mb-4 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-500/10">
@@ -216,9 +230,9 @@ export default function GrowthBotPage() {
       </section>
 
       {/* ── Extra features grid ── */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-16 max-w-2xl">
+          <div className="mb-8 sm:mb-16 max-w-2xl">
             <p className="section-label mb-3">Also Included</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
               Everything else the Growth Bot does.
@@ -226,7 +240,7 @@ export default function GrowthBotPage() {
           </div>
           <div className="grid gap-px overflow-hidden rounded-xl border border-ink-200 bg-ink-200 md:grid-cols-2 lg:grid-cols-3">
             {EXTRA_FEATURES.map((f, i) => (
-              <div key={i} className="bg-white p-8 transition-colors hover:bg-brand-50/30">
+              <div key={i} className="bg-white p-5 transition-colors hover:bg-brand-50/30 sm:p-8">
                 <f.icon size={24} className="text-brand-600" />
                 <h3 className="mt-5 font-display text-lg font-semibold text-ink-900">{f.title}</h3>
                 <p className="mt-2 text-sm text-ink-500 leading-relaxed">{f.description}</p>
@@ -237,9 +251,9 @@ export default function GrowthBotPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-ink-100 py-24">
+      <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-[40px] border border-ink-200 bg-white p-16 text-center shadow-xl">
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-ink-200 bg-white p-6 text-center shadow-xl sm:p-16 sm:rounded-[40px]">
             <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-brand-500/5 blur-glow transition-all group-hover:scale-125" />
             <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-brand-500/5 blur-glow transition-all group-hover:scale-125" />
             <h2 className="relative z-10 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">

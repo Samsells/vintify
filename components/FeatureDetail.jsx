@@ -7,6 +7,7 @@ import {
   Clock, Settings, Link2, Search, Package, ArrowRight, X,
   AlertCircle, Lightbulb, Shield,
 } from 'lucide-react';
+import Link from 'next/link';
 
 /* ── Feature detail data ── */
 /* Each feature has: problem, whyItMatters, solution, result */
@@ -571,6 +572,16 @@ export function FeatureDetailModal({ feature, onClose }) {
               <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-brand-600">The Result</span>
             </div>
             <p className="text-sm leading-relaxed text-ink-900 font-medium">{detail.result}</p>
+          </div>
+
+          {/* CTA */}
+          <div className="flex items-center justify-between border-t border-ink-200 pt-4">
+            <Link href="/features" className="text-sm font-bold text-brand-600 transition-all hover:gap-3 inline-flex items-center gap-2">
+              Explore {detail.category} <ArrowRight size={15} />
+            </Link>
+            <Link href="/pricing" className="text-sm font-bold text-ink-500 transition-colors hover:text-ink-900">
+              Start free trial →
+            </Link>
           </div>
         </div>
       </div>

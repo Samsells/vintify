@@ -1,66 +1,55 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { POSTS } from '@/lib/blog-posts';
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Tips, guides, and insights for Vinted resellers. Grow your reselling business with Vintify.',
+  title: 'Blog — Vinted Reselling Tips, Guides & Strategies | Vintify',
+  description: 'Expert guides for Vinted resellers in the UK. Tax guides, pricing strategies, shipping tips, sourcing advice, AI listing tools, and growth tactics to sell more on Vinted.',
+  keywords: 'vinted reselling tips, vinted selling guide UK, vinted blog, vinted reseller blog, how to sell on vinted, vinted tips 2025, vinted reselling business',
+  alternates: {
+    canonical: 'https://vintify.co.uk/blog',
+  },
+  openGraph: {
+    title: 'Vintify Blog — Vinted Reselling Tips, Guides & Strategies',
+    description: 'Expert guides for Vinted resellers in the UK. Tax, pricing, shipping, sourcing, AI tools, and growth tactics.',
+    url: 'https://vintify.co.uk/blog',
+    type: 'website',
+    images: [{ url: '/logo/og-image.png', width: 1200, height: 630, alt: 'Vintify Blog — Vinted Reselling Tips & Guides' }],
+  },
+  twitter: {
+    title: 'Vintify Blog — Vinted Reselling Tips & Guides',
+    description: 'Expert guides for Vinted resellers in the UK.',
+    card: 'summary_large_image',
+  },
 };
 
-const POSTS = [
-  {
-    slug: 'vinted-tax-guide-uk-2025',
-    title: 'The complete Vinted tax guide for UK resellers (2025)',
-    excerpt: 'Everything you need to know about Vinted and HMRC — the £1,000 trading allowance, when you need to register, and how to file your self-assessment.',
-    date: '2025-01-15',
-    readTime: '8 min read',
-    category: 'Tax',
-  },
-  {
-    slug: 'how-to-price-vinted-items',
-    title: 'How to price your Vinted items for maximum profit',
-    excerpt: 'Pricing is the single biggest lever in your reselling business. Here\'s a data-driven framework for pricing items that actually sell.',
-    date: '2025-01-10',
-    readTime: '6 min read',
-    category: 'Growth',
-  },
-  {
-    slug: 'vinted-vs-depop-vs-vinted',
-    title: 'Vinted vs Depop vs eBay: Which platform is best for resellers?',
-    excerpt: 'We compare fees, audience, shipping, and seller experience across the three biggest resale platforms in the UK.',
-    date: '2025-01-05',
-    readTime: '10 min read',
-    category: 'Guides',
-  },
-  {
-    slug: 'ai-listing-writer-guide',
-    title: 'How AI listing writers work (and why they sell more)',
-    excerpt: 'A deep dive into how Vintify\'s AI growth bot generates listings that rank in Vinted search and convert buyers.',
-    date: '2024-12-20',
-    readTime: '5 min read',
-    category: 'Product',
-  },
-  {
-    slug: 'vinted-shipping-guide',
-    title: 'Vinted shipping explained: Evri, InPost, Yodal, and Royal Mail',
-    excerpt: 'Every shipping option on Vinted, compared by cost, speed, and reliability. Plus how to track them all in one place.',
-    date: '2024-12-15',
-    readTime: '7 min read',
-    category: 'Guides',
-  },
-  {
-    slug: 'tracking-profit-per-item',
-    title: 'Why tracking profit per item is the most important metric',
-    excerpt: 'Revenue is vanity, profit is sanity. Here\'s why knowing your true profit on every single item changes everything.',
-    date: '2024-12-10',
-    readTime: '4 min read',
-    category: 'Accounting',
-  },
-];
-
 export default function BlogPage() {
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Vintify Blog',
+    description: 'Expert guides for Vinted resellers in the UK.',
+    url: 'https://vintify.co.uk/blog',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Vintify',
+      url: 'https://vintify.co.uk',
+    },
+    blogPost: POSTS.map(post => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      url: `https://vintify.co.uk/blog/${post.slug}`,
+      datePublished: post.date,
+      author: { '@type': 'Organization', name: 'Vintify' },
+    })),
+  };
+
   return (
-    <div className="flex min-h-screen flex-col pt-20 lg:pt-24">
-      <section className="border-b border-ink-100 py-20 lg:py-28">
+    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+
+      <section className="border-b border-ink-100 py-12 sm:py-20 lg:py-28">
         <div className="container-max container-px">
           <p className="section-label mb-6">Blog</p>
           <h1 className="font-display text-balance text-4xl font-bold tracking-tight text-ink-900 sm:text-5xl lg:text-6xl">
@@ -71,23 +60,34 @@ export default function BlogPage() {
 
       <section className="section-padding">
         <div className="container-max container-px">
-          <div className="grid gap-px overflow-hidden rounded-xl border border-ink-200 bg-ink-200 md:grid-cols-2 lg:grid-cols-3">
-            {POSTS.map((post, idx) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {POSTS.map((post) => (
               <Link
-                key={idx}
+                key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col bg-white p-8 transition-colors hover:bg-ink-50"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-ink-200 bg-white transition-all hover:border-brand-200 hover:shadow-lg"
               >
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="badge-neutral">{post.category}</span>
-                  <span className="font-mono text-xs text-ink-400">{post.readTime}</span>
+                <div className="relative aspect-[16/10] overflow-hidden bg-ink-100">
+                  <Image
+                    src={post.image}
+                    alt={post.imageAlt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <h2 className="font-display text-lg font-semibold text-ink-900 group-hover:text-ink-700">
-                  {post.title}
-                </h2>
-                <p className="mt-3 flex-1 text-sm text-ink-500 leading-relaxed">{post.excerpt}</p>
-                <div className="mt-6 flex items-center gap-2 font-mono text-xs text-ink-400">
-                  <span>{new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                <div className="flex flex-1 flex-col p-6">
+                  <div className="mb-3 flex items-center gap-3">
+                    <span className="badge-neutral">{post.category}</span>
+                    <span className="font-mono text-xs text-ink-400">{post.readTime}</span>
+                  </div>
+                  <h2 className="font-display text-lg font-semibold text-ink-900 group-hover:text-brand-600 transition-colors">
+                    {post.title}
+                  </h2>
+                  <p className="mt-2 flex-1 text-sm text-ink-500 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                  <div className="mt-4 font-mono text-xs text-ink-400">
+                    {new Date(post.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                  </div>
                 </div>
               </Link>
             ))}

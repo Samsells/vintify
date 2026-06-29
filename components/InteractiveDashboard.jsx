@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import {
   LayoutDashboard, Bot, Zap, Truck, Calculator,
   Settings, ShoppingBag, MessageSquare, Sparkles, ArrowUpRight,
@@ -134,9 +135,13 @@ export default function InteractiveDashboard() {
       <ThrowIn variant="slideLeft" delay={0.05} className="hidden sm:flex">
         <div className="flex w-48 shrink-0 flex-col border-r border-ink-200 bg-white" style={{ minHeight: 520 }}>
           <div className="flex items-center gap-2 border-b border-ink-200 px-4 py-3.5">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-500">
-              <span className="font-display text-sm font-bold text-white">V</span>
-            </div>
+            <Image
+              src="/logo/app-icon.png"
+              alt="Vintify"
+              width={28}
+              height={28}
+              className="h-7 w-7 shrink-0 rounded-lg"
+            />
             <span className="font-display text-sm font-bold text-ink-900">Vintify</span>
           </div>
           <div className="flex-1 space-y-0.5 p-2">

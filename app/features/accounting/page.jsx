@@ -9,6 +9,20 @@ import { FeatureSubNav, FeaturePrevNext } from '@/components/FeatureSubNav';
 export const metadata = {
   title: 'Accounting — True Profit, HMRC-Ready Reports | Vintify',
   description: 'Know your exact profit on every Vinted sale after fees, shipping, and expenses. HMRC-ready tax reports in seconds. Expense tracking, inventory lot splitting, goal tracking, and real-time analytics.',
+  keywords: ['vinted accounting software', 'vinted profit tracker', 'vinted tax report', 'HMRC ready tax reports', 'vinted profit per item', 'vinted expense tracking', 'vinted reseller accounting', 'vinted inventory tracking'],
+  alternates: {
+    canonical: 'https://vintify.co.uk/features/accounting',
+  },
+  openGraph: {
+    title: 'Vintify Accounting — True Profit & HMRC-Ready Tax Reports',
+    description: 'Track exact profit per sale, generate HMRC-ready reports, manage expenses, and monitor goals.',
+    url: 'https://vintify.co.uk/features/accounting',
+  },
+  twitter: {
+    title: 'Vintify Accounting — True Profit & HMRC-Ready Tax Reports',
+    description: 'Track exact profit per sale, generate HMRC-ready reports, manage expenses, and monitor goals.',
+    card: 'summary_large_image',
+  },
 };
 
 const PROBLEMS = [
@@ -184,9 +198,9 @@ export default function AccountingPage() {
       </section>
 
       {/* ── Problem → Solution sections ── */}
-      <section className="bg-ink-100 py-24">
+      <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-16 text-center">
+          <div className="mb-8 sm:mb-16 text-center">
             <p className="section-label mb-3">The Problems We Solve</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
               Every reseller\'s accounting nightmare — solved.
@@ -195,7 +209,7 @@ export default function AccountingPage() {
 
           <div className="space-y-8">
             {PROBLEMS.map((item, i) => (
-              <div key={i} className="grid gap-6 rounded-2xl border border-ink-200 bg-white p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
+              <div key={i} className="grid gap-6 rounded-2xl border border-ink-200 bg-white p-5 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
                 {/* Problem */}
                 <div>
                   <div className="mb-4 flex items-center gap-3">
@@ -225,9 +239,9 @@ export default function AccountingPage() {
       </section>
 
       {/* ── Dashboard features grid ── */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-16 max-w-2xl">
+          <div className="mb-8 sm:mb-16 max-w-2xl">
             <p className="section-label mb-3">Dashboard & Analytics</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
               Every number that matters. On one screen.
@@ -255,9 +269,9 @@ export default function AccountingPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-ink-100 py-24">
+      <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-[40px] border border-ink-200 bg-white p-16 text-center shadow-xl">
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-ink-200 bg-white p-6 text-center shadow-xl sm:p-16 sm:rounded-[40px]">
             <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-brand-500/5 blur-glow transition-all group-hover:scale-125" />
             <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-brand-500/5 blur-glow transition-all group-hover:scale-125" />
             <h2 className="relative z-10 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">

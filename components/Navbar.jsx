@@ -2,15 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const NAV_LINKS = [
   { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/changelog', label: 'Changelog' },
   { href: '/blog', label: 'Blog' },
   { href: '/faq', label: 'FAQ' },
-  { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -38,9 +39,16 @@ export function Navbar() {
           : 'border-b border-transparent bg-ink-50'
       }`}
     >
-      <nav className="container-max container-px flex h-16 items-center justify-between lg:h-20">
-        <Link href="/" className="font-display text-2xl font-extrabold tracking-tight text-ink-900">
-          Vintify
+      <nav className="container-max container-px flex h-12 items-center justify-between sm:h-16 lg:h-20">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo/logo-full.png"
+            alt="Vintify"
+            width={240}
+            height={72}
+            priority
+className="h-12 w-auto sm:h-16 lg:h-20"
+          />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -59,11 +67,8 @@ export function Navbar() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <Link href="/contact" className="text-sm font-medium text-ink-500 transition-colors hover:text-ink-900">
-            Sign in
-          </Link>
-          <Link href="/pricing" className="btn-primary">
+        <div className="hidden items-center gap-3 md:flex">
+          <Link href="/pricing" className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
             Get started
           </Link>
         </div>
@@ -94,10 +99,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="mt-2 flex flex-col gap-2">
-              <Link href="/contact" className="btn-secondary w-full">
-                Sign in
-              </Link>
-              <Link href="/pricing" className="btn-primary w-full">
+              <Link href="/pricing" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] active:scale-95">
                 Get started
               </Link>
             </div>

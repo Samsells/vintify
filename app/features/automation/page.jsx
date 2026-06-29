@@ -9,6 +9,20 @@ import { FeatureSubNav, FeaturePrevNext } from '@/components/FeatureSubNav';
 export const metadata = {
   title: 'Automation — Bulk Edit, Auto-Repost, Label Hub, Auto-Lister | Vintify',
   description: 'Bulk edit prices and SKUs across hundreds of listings. Auto-repost and schedule reposts. Schedule price drops. Import all Vinted shipping labels into one Label Hub. Auto-list with AI. Automate the busywork.',
+  keywords: ['vinted bulk edit', 'vinted auto repost', 'vinted label hub', 'vinted auto lister', 'vinted shipping labels', 'vinted bulk listing', 'vinted automation tool', 'vinted SKU generator'],
+  alternates: {
+    canonical: 'https://vintify.co.uk/features/automation',
+  },
+  openGraph: {
+    title: 'Vintify Automation — Bulk Edit, Auto-Repost & Label Hub',
+    description: 'Bulk edit, auto-repost, scheduled price drops, Label Hub, and AI auto-lister. Automate the busywork.',
+    url: 'https://vintify.co.uk/features/automation',
+  },
+  twitter: {
+    title: 'Vintify Automation — Bulk Edit, Auto-Repost & Label Hub',
+    description: 'Bulk edit, auto-repost, scheduled price drops, Label Hub, and AI auto-lister. Automate the busywork.',
+    card: 'summary_large_image',
+  },
 };
 
 const PROBLEMS = [
@@ -193,9 +207,9 @@ export default function AutomationPage() {
       </section>
 
       {/* ── Problem → Solution sections ── */}
-      <section className="bg-ink-100 py-24">
+      <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-16 text-center">
+          <div className="mb-8 sm:mb-16 text-center">
             <p className="section-label mb-3">The Problems We Solve</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
               The repetitive tasks — automated.
@@ -204,7 +218,7 @@ export default function AutomationPage() {
 
           <div className="space-y-8">
             {PROBLEMS.map((item, i) => (
-              <div key={i} className="grid gap-6 rounded-2xl border border-ink-200 bg-white p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
+              <div key={i} className="grid gap-6 rounded-2xl border border-ink-200 bg-white p-5 sm:p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
                 <div>
                   <div className="mb-4 flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent-500/10">
@@ -232,9 +246,9 @@ export default function AutomationPage() {
       </section>
 
       {/* ── Extra features grid ── */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-16 max-w-2xl">
+          <div className="mb-8 sm:mb-16 max-w-2xl">
             <p className="section-label mb-3">Also Included</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
               Everything else Automation does.
@@ -253,9 +267,9 @@ export default function AutomationPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="bg-ink-100 py-24">
+      <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-[40px] border border-ink-200 bg-white p-16 text-center shadow-xl">
+          <div className="group relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-ink-200 bg-white p-6 text-center shadow-xl sm:p-16 sm:rounded-[40px]">
             <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-brand-500/5 blur-glow transition-all group-hover:scale-125" />
             <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-brand-500/5 blur-glow transition-all group-hover:scale-125" />
             <h2 className="relative z-10 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">

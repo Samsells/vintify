@@ -1,9 +1,17 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Shield, Lock, RefreshCw, Chrome } from 'lucide-react';
 
 export const metadata = {
-  title: 'FAQ',
-  description: 'Common questions about Vintify — pricing, security, Vinted integration, and more.',
+  title: 'FAQ — Common Questions About Vintify',
+  description: 'Answers to common questions about Vintify: how it connects to Vinted, pricing (£25/mo or £69 lifetime), security, free trial, tax reports, and more.',
+  alternates: {
+    canonical: 'https://vintify.co.uk/faq',
+  },
+  openGraph: {
+    title: 'Vintify FAQ — Common Questions Answered',
+    description: 'How Vintify connects to Vinted, pricing, security, free trial, tax reports, and more.',
+    url: 'https://vintify.co.uk/faq',
+  },
 };
 
 const FAQS = [
@@ -12,15 +20,23 @@ const FAQS = [
     questions: [
       {
         q: 'What is Vintify?',
-        a: 'Vintify is accounting software and a growth bot for Vinted resellers. It tracks your profit margins, automates listings with AI, generates HMRC-ready tax reports, and manages your orders — all in one place.',
+        a: 'Vintify is an all-in-one platform for Vinted resellers. It tracks your true profit per item, automates listings with AI, generates HMRC-ready tax reports, manages orders, and includes a growth bot that drops prices and handles offers — all in one place.',
       },
       {
         q: 'How does Vintify connect to my Vinted account?',
-        a: 'We use a secure Chrome Extension that links your logged-in Vinted session to Vintify. We never ask for or store your Vinted password. The extension reads your sales, listings, and messages so they sync automatically.',
+        a: 'Vintify connects through your logged-in browser session using a Chrome Extension. You don\'t give us your Vinted password, and Vintify is designed to help with actions sellers already do manually, like managing listings, tracking sales, and organising orders.',
       },
       {
-        q: 'Do I need to be a certain size to use Vintify?',
-        a: 'No. Vintify works for side-hustlers selling a few items a week and full-time resellers doing hundreds of items a month. Our Starter plan is designed for people just getting organised.',
+        q: 'Is Vintify only for big sellers?',
+        a: 'No. Vintify works whether you sell 5 items a week or 500. The profit tracking and AI listings are useful from day one. The growth bot becomes more valuable as your inventory grows.',
+      },
+      {
+        q: 'Do I need to install anything?',
+        a: 'Just the Chrome Extension, which connects Vintify to your Vinted account securely. It takes under a minute to install and works with your existing browser session. No passwords required.',
+      },
+      {
+        q: 'What happens after the 7-day free trial?',
+        a: 'You automatically move onto your chosen plan (monthly or lifetime) unless you cancel. No charges during the trial — we\'ll remind you before it ends. Cancel anytime from your billing settings with one click.',
       },
     ],
   },
@@ -28,8 +44,12 @@ const FAQS = [
     category: 'Security & data',
     questions: [
       {
+        q: 'Is this against Vinted\'s rules?',
+        a: 'Vintify is built to support normal seller workflows, such as listing management, price updates, messages, and tracking. You should always use automation responsibly and follow Vinted\'s terms.',
+      },
+      {
         q: 'Is my data safe?',
-        a: 'Yes. Your Vinted password is never asked for or stored. The Chrome Extension uses your active browser session. All data is encrypted in transit and at rest. We are UK-based and GDPR compliant.',
+        a: 'Yes. Your Vinted password is never asked for or stored. The Chrome Extension uses your active browser session. All data is encrypted in transit and at rest. We are UK-based and privacy-first.',
       },
       {
         q: 'Can Vintify access my Vinted account?',
@@ -45,16 +65,20 @@ const FAQS = [
     category: 'Pricing & billing',
     questions: [
       {
+        q: 'How much does Vintify cost?',
+        a: '£25/month for everything, or £69 lifetime (one-time payment) while we\'re in founding member mode. Both plans include all 55+ features — no tiers, no upsells, no hidden fees.',
+      },
+      {
         q: 'Is there a free trial?',
-        a: 'Yes. Every plan comes with a 14-day free trial. No credit card required to start. You can explore every feature before deciding.',
+        a: 'Yes. You get a 7-day free trial with full access to every feature. No credit card required to start. You can explore everything before deciding.',
+      },
+      {
+        q: 'What\'s included in the lifetime plan?',
+        a: 'Everything. One payment of £69, no recurring charges ever. All current features, all future updates, priority support. You pay once and use Vintify for as long as it exists.',
       },
       {
         q: 'Can I cancel anytime?',
-        a: 'Yes. Cancel from your billing settings at any time. You keep access until the end of your current billing period.',
-      },
-      {
-        q: 'Do prices include VAT?',
-        a: 'No, prices are shown excluding VAT. VAT is added at checkout for UK customers.',
+        a: 'Yes. Cancel from your billing settings at any time. You keep access until the end of your current billing period. No phone calls, no retention emails, no hassle.',
       },
     ],
   },
@@ -77,37 +101,88 @@ const FAQS = [
   },
 ];
 
+const TRUST_SIGNALS = [
+  { icon: Lock, label: 'No Vinted password needed' },
+  { icon: Chrome, label: 'Browser-based connection' },
+  { icon: RefreshCw, label: 'Cancel anytime' },
+  { icon: Shield, label: '7-day free trial' },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.flatMap((group) =>
+    group.questions.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    }))
+  ),
+};
+
 export default function FAQPage() {
   return (
-    <div className="flex min-h-screen flex-col pt-20 lg:pt-24">
-      <section className="border-b border-ink-100 py-20 lg:py-28">
-        <div className="container-max container-px">
-          <p className="section-label mb-6">FAQ</p>
-          <h1 className="font-display text-balance text-4xl font-bold tracking-tight text-ink-900 sm:text-5xl lg:text-6xl">
-            Frequently asked questions.
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden border-b border-ink-100 bg-white pt-8 pb-6 sm:pt-10 sm:pb-8">
+        <div className="absolute inset-0 bg-grid-faint opacity-40" />
+        <div className="absolute left-1/2 top-0 h-[300px] w-[500px] -translate-x-1/2 rounded-full bg-brand-500/8 blur-glow" />
+
+        <div className="container-max container-px relative z-10 text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">FAQ</p>
+          <h1 className="mx-auto mt-3 max-w-3xl font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-5xl lg:text-6xl">
+            Questions before you start?<br />
+            <span className="text-gradient">We've answered the important ones.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink-600">
-            Can't find what you're looking for? <Link href="/contact" className="text-ink-900 underline underline-offset-4 hover:no-underline">Get in touch</Link>.
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-ink-500">
+            Can't find what you're looking for?{' '}
+            <Link href="/contact" className="font-semibold text-brand-600 hover:text-brand-700">
+              Get in touch
+            </Link>
+            .
           </p>
         </div>
       </section>
 
-      <section className="section-padding">
-        <div className="container-narrow container-px">
-          <div className="space-y-16">
+      {/* ── Trust signals ── */}
+      <section className="border-b border-ink-100 bg-ink-50 py-6">
+        <div className="container-max container-px">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+            {TRUST_SIGNALS.map((t) => (
+              <div key={t.label} className="flex items-center gap-2">
+                <t.icon size={16} className="text-brand-600" />
+                <span className="text-sm font-semibold text-ink-700">{t.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ content ── */}
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="container-max container-px">
+          <div className="mx-auto max-w-3xl space-y-8 sm:space-y-12">
             {FAQS.map((group, gIdx) => (
               <div key={gIdx}>
-                <p className="section-label mb-8">{group.category}</p>
-                <div className="space-y-px overflow-hidden rounded-xl border border-ink-200 bg-ink-200">
+                <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-brand-600">{group.category}</p>
+                <div className="space-y-3">
                   {group.questions.map((faq, fIdx) => (
-                    <details key={fIdx} className="group bg-white">
-                      <summary className="flex cursor-pointer items-center justify-between p-6 font-display text-lg font-medium text-ink-900 list-none">
+                    <details key={fIdx} className="group overflow-hidden rounded-xl border border-ink-200 bg-white transition-all open:border-brand-300 open:shadow-md">
+                      <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 font-display text-base font-bold text-ink-900 list-none transition-colors group-open:text-brand-600">
                         {faq.q}
-                        <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-ink-200 text-ink-400 transition-transform group-open:rotate-45">
+                        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-ink-200 text-ink-400 transition-all group-open:rotate-45 group-open:border-brand-300 group-open:text-brand-600">
                           <span className="text-lg leading-none">+</span>
                         </span>
                       </summary>
-                      <div className="px-6 pb-6 text-ink-600 leading-relaxed">
+                      <div className="px-5 pb-5 text-sm leading-relaxed text-ink-600">
                         {faq.a}
                       </div>
                     </details>
@@ -119,18 +194,27 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <section className="bg-ink-900 py-24">
+      {/* ── CTA ── */}
+      <section className="bg-ink-900 py-16 sm:py-24">
         <div className="container-max container-px text-center">
-          <h2 className="font-display text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mx-auto max-w-2xl font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Still have questions?
           </h2>
-          <div className="mt-8 flex justify-center">
-            <Link href="/contact" className="btn-accent">
-              Contact us <ArrowRight size={16} />
+          <p className="mx-auto mt-4 max-w-lg text-lg text-ink-400">
+            We're happy to help. Get in touch and we'll get back to you within 24 hours.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+              Contact us
+              <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link href="/pricing" className="inline-flex items-center justify-center gap-2 rounded-xl border border-ink-700 bg-ink-800 px-8 py-4 text-base font-bold text-white transition-all hover:bg-ink-700 hover:border-ink-600">
+              See pricing
             </Link>
           </div>
         </div>
       </section>
     </div>
+    </>
   );
 }

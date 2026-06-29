@@ -2,21 +2,35 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
-  title: 'About',
-  description: 'Vintify is built by resellers, for resellers. Learn about our mission to give Vinted sellers the tools they deserve.',
+  title: 'About Vintify — Built by Resellers, for Resellers',
+  description: 'Vintify was built by Vinted resellers who got tired of juggling spreadsheets, bots, and manual listing. Learn about our mission to give Vinted sellers the professional tools they deserve.',
+  keywords: ['about vintify', 'vintify mission', 'vinted reseller platform', 'vinted seller tools', 'vinted business software', 'who built vintify'],
+  alternates: {
+    canonical: 'https://vintify.co.uk/about',
+  },
+  openGraph: {
+    title: 'About Vintify — Built by Resellers, for Resellers',
+    description: 'Learn about our mission to give Vinted sellers professional accounting, growth automation, and AI tools.',
+    url: 'https://vintify.co.uk/about',
+  },
+  twitter: {
+    title: 'About Vintify — Built by Resellers, for Resellers',
+    description: 'Learn about our mission to give Vinted sellers professional accounting, growth automation, and AI tools.',
+    card: 'summary_large_image',
+  },
 };
 
 export default function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col pt-20 lg:pt-24">
-      <section className="border-b border-ink-100 py-20 lg:py-28">
+    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+      <section className="border-b border-ink-100 py-12 sm:py-20 lg:py-28">
         <div className="container-max container-px">
           <p className="section-label mb-6">About</p>
           <h1 className="font-display text-balance text-4xl font-bold tracking-tight text-ink-900 sm:text-5xl lg:text-6xl">
             Built by resellers, for resellers.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink-600">
-            Vintify started as a spreadsheet. Then a script. Then a Chrome extension. Now it's the accounting and growth platform that hundreds of UK Vinted resellers rely on every day.
+            Vintify started as a spreadsheet. Then a script. Then a Chrome extension. Now it's the accounting and growth platform built specifically for UK Vinted resellers — giving you the tools of a real business without the spreadsheet headaches.
           </p>
         </div>
       </section>
@@ -61,10 +75,10 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-ink-900 py-24">
+      <section className="bg-ink-900 py-16 sm:py-24">
         <div className="container-max container-px text-center">
           <h2 className="font-display text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Ready to join hundreds of UK resellers?
+            Ready to take your reselling seriously?
           </h2>
           <div className="mt-8 flex justify-center">
             <Link href="/pricing" className="btn-accent">

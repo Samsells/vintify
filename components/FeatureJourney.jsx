@@ -36,12 +36,12 @@ const STAGES = [
     features: [
       { title: 'AI listing writer', icon: Sparkles, highlight: true },
       { title: 'One-click Vinted listing', icon: Zap, highlight: true },
-      { title: 'AI listing rewriter', icon: RefreshCw },
-      { title: 'Custom SKU patterns', icon: Tag },
       { title: 'Bulk price editing', icon: Tag, highlight: true },
+      { title: 'AI listing rewriter', icon: RefreshCw },
       { title: 'Bulk SKU assignment', icon: Tag },
       { title: 'Stale listing detection', icon: RefreshCw },
       { title: 'Bulk Vinted actions', icon: Zap },
+      { title: 'Custom SKU patterns', icon: Tag },
     ],
   },
   {
@@ -51,9 +51,9 @@ const STAGES = [
     title: 'Reply in seconds. Accept offers automatically.',
     description: 'Central inbox for all Vinted messages. AI-drafted replies. Smart Offers auto-accepts, counters, or declines based on your rules.',
     features: [
-      { title: 'Central inbox', icon: MessageSquare },
       { title: 'Smart Offers', icon: Tag, highlight: true },
       { title: 'AI reply suggestions', icon: MessageCircle, highlight: true },
+      { title: 'Central inbox', icon: MessageSquare },
       { title: 'Offer management', icon: MessageCircle },
       { title: 'Listing engagement stats', icon: BarChart3 },
     ],
@@ -65,10 +65,10 @@ const STAGES = [
     title: 'From sold to delivered. Never miss a deadline.',
     description: 'Track every order through the shipping pipeline. Import all Vinted labels into one Label Hub. Auto-detect carriers. Print in one click.',
     features: [
-      { title: 'Shipping lifecycle', icon: Truck },
-      { title: 'Carrier auto-detection', icon: Truck },
       { title: 'Label Hub — all labels in 1 place', icon: Printer, highlight: true },
       { title: 'Dispatch deadlines', icon: Zap, highlight: true },
+      { title: 'Shipping lifecycle', icon: Truck },
+      { title: 'Carrier auto-detection', icon: Truck },
       { title: 'Tracking numbers', icon: FileText },
       { title: 'Manual status overrides', icon: Settings },
     ],
@@ -82,10 +82,10 @@ const STAGES = [
     features: [
       { title: 'True profit per item', icon: Calculator, highlight: true },
       { title: 'HMRC-ready tax reports', icon: Landmark, highlight: true },
+      { title: 'Sell-through rate', icon: TrendingUp, highlight: true },
       { title: 'Expense tracking', icon: Receipt },
       { title: 'Goal tracking', icon: Target },
       { title: 'Sales cadence chart', icon: BarChart3 },
-      { title: 'Sell-through rate', icon: TrendingUp, highlight: true },
       { title: 'Performance analytics', icon: BarChart3 },
       { title: 'Other income management', icon: Receipt },
     ],
@@ -98,8 +98,8 @@ const STAGES = [
     description: 'Auto price-drop bot pings users who favourited your items. Schedule reposts and price drops. Auto-repost stale listings. Full audit trail.',
     features: [
       { title: 'Auto price-drop bot', icon: Bot, highlight: true },
-      { title: 'Scheduled price drops', icon: Clock, highlight: true },
       { title: 'Auto repost', icon: RefreshCw, highlight: true },
+      { title: 'Scheduled price drops', icon: Clock, highlight: true },
       { title: 'Scheduled reposts', icon: Clock },
       { title: 'Reprice ledger', icon: FileText },
       { title: 'Pinned items', icon: Target },
@@ -601,25 +601,30 @@ function FeatureBentoGrid({ onFeatureClick }) {
   };
 
   return (
-    <div className="mt-20">
-      <div className="mb-10 text-center">
+    <div className="mt-12 sm:mt-20">
+      <div className="mb-8 text-center sm:mb-10">
         <p className="section-label mb-3">The full arsenal</p>
         <h3 className="font-display text-2xl font-bold tracking-tight text-ink-900 sm:text-3xl">
-          Every feature. All in one place.
+          Every feature included. All in one place.
         </h3>
         <p className="mx-auto mt-3 max-w-lg text-ink-500">
           {BENTO_GROUPS.reduce((sum, g) => sum + g.features.length, 0)} features across 3 engines — for less than the cost of one.
         </p>
-        <p className="mt-2 text-xs text-ink-400">Click any feature to see the problem it solves.</p>
+        <p className="mt-2 text-sm font-medium text-ink-500">Click any feature to see the problem it solves.</p>
+        <p className="mt-1 text-xs text-ink-400">
+          <span className="inline-flex items-center gap-1">
+            <Star size={10} className="fill-brand-500 text-brand-500" /> Highlighted features are the ones most resellers use daily.
+          </span>
+        </p>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 lg:grid-cols-3">
         {BENTO_GROUPS.map((group, gi) => {
           const a = accentMap[group.accent];
           return (
             <div
               key={gi}
-              className={`group flex flex-col rounded-2xl border ${a.border} bg-white p-6 transition-all hover:shadow-xl`}
+              className={`group flex flex-col rounded-2xl border ${a.border} bg-white p-5 sm:p-6 transition-all hover:shadow-xl`}
             >
               <Link
                 href={group.href}
@@ -645,7 +650,7 @@ function FeatureBentoGrid({ onFeatureClick }) {
                       key={fi}
                       onClick={() => hasDetail && onFeatureClick(f)}
                       disabled={!hasDetail}
-                      className={`flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left transition-colors ${
+                      className={`flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-left transition-colors ${
                         isHero
                           ? 'bg-brand-500/5 hover:bg-brand-500/10 cursor-pointer'
                           : hasDetail
@@ -703,17 +708,20 @@ export function FeatureJourney() {
   return (
     <div>
       {/* ── Journey header ── */}
-      <div className="mb-14 text-center">
+      <div className="mb-8 text-center sm:mb-14">
         <div className="mb-6 flex items-center justify-center gap-4">
           <div className="h-px w-12 bg-ink-200 sm:w-24" />
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-brand-600">Every tool in the box</span>
           <div className="h-px w-12 bg-ink-200 sm:w-24" />
         </div>
-        <h2 className="font-display text-3xl font-extrabold tracking-tight text-ink-900 sm:text-5xl">
+        <h2 className="font-display text-2xl font-extrabold tracking-tight text-ink-900 sm:text-4xl sm:text-5xl">
           <span className="text-brand-500">{totalFeatures}+</span> features. One subscription.
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-lg text-ink-500">
+        <p className="mx-auto mt-4 max-w-xl text-base text-ink-500 sm:text-lg">
           From sourcing to scaling — every stage of your Vinted business, handled.
+        </p>
+        <p className="mt-3 text-sm font-medium text-ink-400">
+          Click a stage to see how Vintify handles that part of your reselling workflow.
         </p>
       </div>
 
@@ -738,11 +746,11 @@ export function FeatureJourney() {
                     ? 'border-brand-500 bg-brand-500 text-white scale-110 shadow-lg shadow-brand-500/30'
                     : isPassed
                     ? 'border-brand-500 bg-brand-500/10 text-brand-600'
-                    : 'border-ink-200 bg-white text-ink-400 group-hover:border-brand-300'
+                    : 'border-ink-300 bg-white text-ink-600 group-hover:border-brand-300'
                 }`}>
                   <Icon size={18} />
                 </div>
-                <span className={`text-xs font-semibold transition-colors ${isActive ? 'text-brand-600' : isPassed ? 'text-brand-600/70' : 'text-ink-400'}`}>
+                <span className={`text-xs font-semibold transition-colors ${isActive ? 'text-brand-600' : isPassed ? 'text-brand-600/70' : 'text-ink-600'}`}>
                   {s.label}
                 </span>
                 <span className={`font-mono text-[9px] ${isActive ? 'text-brand-600' : 'text-ink-300'}`}>
@@ -777,7 +785,7 @@ export function FeatureJourney() {
       </div>
 
       {/* ── Active stage content — mockup + feature pills ── */}
-      <div key={stage.id} className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:gap-12">
+      <div key={stage.id} className="grid gap-6 lg:grid-cols-[1fr_1.3fr] lg:gap-12">
         {/* Left — Stage info + feature pills */}
         <div className="lg:sticky lg:top-24 lg:self-start">
           <div className="flex items-center gap-3">
@@ -858,14 +866,22 @@ export function FeatureJourney() {
         </div>
 
         {/* Right — Product mockup in browser frame */}
-        <div style={{ animation: 'fadeUp 0.5s ease-out forwards', opacity: 0 }}>
-          <BrowserFrame url={`app.vintify.co.uk/${stage.id}`}>
-            <Mockup />
-          </BrowserFrame>
+        <div style={{ animation: 'fadeUp 0.5s ease-out forwards', opacity: 0 }} className="relative">
+          <div className="absolute inset-x-4 -top-4 -bottom-4 rounded-[32px] bg-brand-500/8 blur-3xl" />
+          <div className="relative">
+            <BrowserFrame url={`app.vintify.co.uk/${stage.id}`}>
+              <Mockup />
+            </BrowserFrame>
+          </div>
         </div>
       </div>
 
       {/* ── Bento grid — all features at a glance ── */}
+      <div className="mt-20 text-center">
+        <p className="text-sm font-medium text-ink-400">
+          That's just the workflow. Below, every feature is broken down by engine.
+        </p>
+      </div>
       <FeatureBentoGrid onFeatureClick={setSelectedFeature} />
 
       {/* ── Feature detail modal ── */}

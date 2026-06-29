@@ -12,8 +12,8 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col pt-20 lg:pt-24">
-      <section className="border-b border-ink-100 py-20 lg:py-28">
+    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+      <section className="border-b border-ink-100 py-12 sm:py-20 lg:py-28">
         <div className="container-max container-px">
           <p className="section-label mb-6">Contact</p>
           <h1 className="font-display text-balance text-4xl font-bold tracking-tight text-ink-900 sm:text-5xl lg:text-6xl">

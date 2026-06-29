@@ -86,7 +86,7 @@ export default function WaitlistForm({ className = '' }) {
             </>
           ) : (
             <>
-              Join waitlist
+              Join founding waitlist
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </>
           )}
