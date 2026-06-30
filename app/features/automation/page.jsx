@@ -287,7 +287,7 @@ export default function AutomationPage() {
                 Explore Accounting <ArrowRight size={18} />
               </Link>
             </div>
-            <p className="relative z-10 mt-5 text-xs font-semibold uppercase tracking-widest text-ink-400">No credit card required · 14-day free trial</p>
+            <p className="relative z-10 mt-5 text-xs font-semibold uppercase tracking-widest text-ink-400">7-day free trial · Cancel anytime</p>
           </div>
         </div>
       </section>

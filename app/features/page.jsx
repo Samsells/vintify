@@ -132,7 +132,7 @@ export default function FeaturesPage() {
             Try every feature free for 7 days.
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-lg text-ink-400">
-            No credit card required. Cancel anytime. Set up in under 5 minutes.
+            7-day free trial. Cancel anytime. Set up in under 5 minutes.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <Link href="/pricing" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">

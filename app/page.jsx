@@ -116,7 +116,7 @@ export default function Home() {
           >
             <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
               <CheckCircle2 size={14} className="text-emerald-500" />
-              No credit card required
+              Cancel anytime
             </div>
             <div className="hidden h-3.5 w-px bg-ink-200 sm:block" />
             <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
@@ -518,7 +518,7 @@ export default function Home() {
           </div>
 
           <p className="mt-8 text-center font-mono text-xs text-ink-400">
-            All features included · 7-day free trial · No credit card required
+            All features included · 7-day free trial · Cancel anytime
           </p>
         </div>
       </section>

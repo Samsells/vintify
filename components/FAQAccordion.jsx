@@ -137,7 +137,7 @@ export default function FAQAccordion() {
       <div className="mt-12 flex flex-col items-center justify-between gap-4 rounded-2xl border border-ink-200 bg-white px-8 py-6 sm:flex-row">
         <div>
           <p className="font-display text-lg font-bold text-ink-900">Ready to try Vintify?</p>
-          <p className="text-sm text-ink-500">7-day free trial. No credit card required.</p>
+          <p className="text-sm text-ink-500">7-day free trial. Cancel anytime.</p>
         </div>
         <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
           Start free trial

@@ -70,7 +70,7 @@ const FAQS = [
       },
       {
         q: 'Is there a free trial?',
-        a: 'Yes. You get a 7-day free trial with full access to every feature. No credit card required to start. You can explore everything before deciding.',
+        a: 'Yes. You get a 7-day free trial with full access to every feature. You add your card to start, but you are not charged until the trial ends — and you can cancel anytime before then.',
       },
       {
         q: 'What\'s included in the lifetime plan?',
