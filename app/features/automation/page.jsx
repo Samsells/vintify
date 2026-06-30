@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SIGNUP_URL } from '@/lib/site';
 import {
   ArrowRight, Zap, Tag, RefreshCw, Printer, Truck, Clock,
   ShoppingBag, Boxes, Link2, FileText, Settings, Shield,
@@ -105,9 +106,9 @@ export default function AutomationPage() {
               Bulk edit prices and SKUs. Auto-repost and schedule reposts. Schedule price drops. Import all shipping labels into one Label Hub. Auto-list with AI. Turn hours of clicking into seconds.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/pricing" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 active:scale-95 sm:w-auto">
+              <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 active:scale-95 sm:w-auto">
                 Start free trial <ArrowRight size={18} />
-              </Link>
+              </a>
               <Link href="/features" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-ink-200 px-8 py-4 text-lg font-bold text-ink-900 transition-all hover:bg-ink-100 sm:w-auto">
                 All features
               </Link>
@@ -279,9 +280,9 @@ export default function AutomationPage() {
               Bulk editing, auto-reposting, scheduled drops, Label Hub, and AI auto-lister — all included. Stop doing busywork. Start scaling.
             </p>
             <div className="relative z-10 mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/pricing" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 active:scale-95 sm:w-auto">
+              <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 active:scale-95 sm:w-auto">
                 Start free trial <ArrowRight size={18} />
-              </Link>
+              </a>
               <Link href="/features/accounting" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-ink-200 px-8 py-4 text-lg font-bold text-ink-900 transition-all hover:bg-ink-100 sm:w-auto">
                 Explore Accounting <ArrowRight size={18} />
               </Link>

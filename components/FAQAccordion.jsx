@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Plus, Shield, Lock, RefreshCw, Chrome, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { SIGNUP_URL } from '@/lib/site';
 
 const FAQS = [
   {
@@ -138,10 +139,10 @@ export default function FAQAccordion() {
           <p className="font-display text-lg font-bold text-ink-900">Ready to try Vintify?</p>
           <p className="text-sm text-ink-500">7-day free trial. No credit card required.</p>
         </div>
-        <Link href="/contact" className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+        <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
           Start free trial
           <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-        </Link>
+        </a>
       </div>
     </div>
   );

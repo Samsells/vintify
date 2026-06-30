@@ -8,6 +8,7 @@ import {
   AlertCircle, Lightbulb, Shield,
 } from 'lucide-react';
 import Link from 'next/link';
+import { SIGNUP_URL } from '@/lib/site';
 
 /* ── Feature detail data ── */
 /* Each feature has: problem, whyItMatters, solution, result */
@@ -579,9 +580,9 @@ export function FeatureDetailModal({ feature, onClose }) {
             <Link href="/features" className="text-sm font-bold text-brand-600 transition-all hover:gap-3 inline-flex items-center gap-2">
               Explore {detail.category} <ArrowRight size={15} />
             </Link>
-            <Link href="/pricing" className="text-sm font-bold text-ink-500 transition-colors hover:text-ink-900">
+            <a href={SIGNUP_URL} className="text-sm font-bold text-ink-500 transition-colors hover:text-ink-900">
               Start free trial →
-            </Link>
+            </a>
           </div>
         </div>
       </div>

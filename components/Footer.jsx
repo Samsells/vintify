@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import { LOGIN_URL, SIGNUP_URL } from '@/lib/site';
 
 const FOOTER_LINKS = {
   Product: [
@@ -9,6 +10,7 @@ const FOOTER_LINKS = {
     { href: '/changelog', label: 'Changelog' },
     { href: '/faq', label: 'FAQ' },
     { href: '/contact', label: 'Contact' },
+    { href: LOGIN_URL, label: 'Log in', external: true },
   ],
   Company: [
     { href: '/about', label: 'About' },
@@ -41,10 +43,10 @@ export function Footer() {
             <p className="max-w-sm text-sm leading-relaxed text-ink-500">
               The all-in-one platform for Vinted resellers. Accounting, growth automation, sourcing, and analytics — 55+ features, one subscription.
             </p>
-            <Link href="/pricing" className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+            <a href={SIGNUP_URL} className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
               Start free trial
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
 
           {/* Link columns */}
@@ -54,12 +56,21 @@ export function Footer() {
               <ul className="mt-4 space-y-3">
                 {links.map((link) => (
                   <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-ink-500 transition-colors hover:text-brand-600"
-                    >
-                      {link.label}
-                    </Link>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        className="text-sm text-ink-500 transition-colors hover:text-brand-600"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-ink-500 transition-colors hover:text-brand-600"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

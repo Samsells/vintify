@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, GitBranch, Sparkles, Bug, Shield, Zap, Wrench, Palette, Rocket } from 'lucide-react';
+import { SIGNUP_URL } from '@/lib/site';
 
 const TAG_CONFIG = {
   'New Feature': { icon: Sparkles, color: 'bg-brand-500/10 text-brand-700 border-brand-200', dot: 'bg-brand-500' },
@@ -198,10 +199,10 @@ export default function ChangelogTimeline({ versions }) {
           {/* CTA */}
           <div className="mt-4 text-center">
             <p className="mb-4 font-mono text-xs uppercase tracking-wider text-ink-400">Want all these features?</p>
-            <Link href="/pricing" className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+            <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
               Start your 7-day free trial
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

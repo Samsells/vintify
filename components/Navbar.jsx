@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
+import { LOGIN_URL, SIGNUP_URL } from '@/lib/site';
 
 const NAV_LINKS = [
   { href: '/features', label: 'Features' },
@@ -68,9 +69,12 @@ className="h-12 w-auto sm:h-16 lg:h-20"
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/pricing" className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+          <a href={LOGIN_URL} className="text-sm font-semibold text-ink-600 transition-colors hover:text-brand-600">
+            Log in
+          </a>
+          <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
             Get started
-          </Link>
+          </a>
         </div>
 
         <button
@@ -99,9 +103,12 @@ className="h-12 w-auto sm:h-16 lg:h-20"
               </Link>
             ))}
             <div className="mt-2 flex flex-col gap-2">
-              <Link href="/pricing" className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] active:scale-95">
+              <a href={LOGIN_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-ink-200 bg-white px-5 py-3 text-sm font-bold text-ink-900 transition-all hover:bg-ink-100 active:scale-95">
+                Log in
+              </a>
+              <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] active:scale-95">
                 Get started
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Check, Zap, Shield, TrendingUp } from 'lucide-react';
 import { FeaturesExplorer, BeforeAfterComparison } from '@/components/FeaturesExplorer';
+import { SIGNUP_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Features — 55+ Tools for Vinted Resellers',
@@ -46,10 +47,10 @@ export default function FeaturesPage() {
             Accounting, growth automation, sourcing, selling, fulfilment, and analytics — everything you need to run a profitable Vinted business, in one place.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Link href="/pricing" className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
+            <a href={SIGNUP_URL} className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
               Start free trial
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-            </Link>
+            </a>
             <Link href="/contact" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-ink-200 bg-white px-8 py-4 text-base font-bold text-ink-900 transition-all hover:bg-ink-100 hover:border-ink-300 sm:w-auto">
               Book a demo
             </Link>

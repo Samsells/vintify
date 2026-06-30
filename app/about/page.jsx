@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { SIGNUP_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'About Vintify — Built by Resellers, for Resellers',
@@ -81,9 +82,9 @@ export default function AboutPage() {
             Ready to take your reselling seriously?
           </h2>
           <div className="mt-8 flex justify-center">
-            <Link href="/pricing" className="btn-accent">
+            <a href={SIGNUP_URL} className="btn-accent">
               Start your free trial <ArrowRight size={16} />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
