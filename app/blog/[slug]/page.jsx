@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronRight } from 'lucide-react';
 import { POSTS, getPostBySlug, getAllSlugs } from '@/lib/blog-posts';
 
 export function generateStaticParams() {
