@@ -2,11 +2,12 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, CheckCircle2, Loader2, AlertCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MailCheck, Loader2, AlertCircle } from 'lucide-react';
 
 export default function WaitlistForm({ className = '' }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [pending, setPending] = useState(false); // true = "check your inbox" (double opt-in)
   const [message, setMessage] = useState('');
 
   async function handleSubmit(e) {
@@ -24,6 +25,7 @@ export default function WaitlistForm({ className = '' }) {
       const data = await res.json();
 
       if (res.ok) {
+        setPending(Boolean(data.pending));
         setStatus('success');
         setMessage(data.message);
         setEmail('');
@@ -38,6 +40,7 @@ export default function WaitlistForm({ className = '' }) {
   }
 
   if (status === 'success') {
+    const Icon = pending ? MailCheck : CheckCircle2;
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -45,12 +48,17 @@ export default function WaitlistForm({ className = '' }) {
         transition={{ type: 'spring', stiffness: 200, damping: 18 }}
         className={`flex flex-col items-center gap-3 ${className}`}
       >
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/10">
-          <CheckCircle2 size={28} className="text-emerald-500" />
+        <div className={`flex h-14 w-14 items-center justify-center rounded-full ${pending ? 'bg-brand-500/10' : 'bg-emerald-500/10'}`}>
+          <Icon size={28} className={pending ? 'text-brand-600' : 'text-emerald-500'} />
         </div>
         <p className="text-center text-lg font-semibold text-ink-900">{message}</p>
+        {pending && (
+          <p className="max-w-xs text-center text-sm text-ink-500">
+            Didn&apos;t get it? Check your spam folder — the email comes from hello@getvintify.com.
+          </p>
+        )}
         <button
-          onClick={() => setStatus('idle')}
+          onClick={() => { setStatus('idle'); setPending(false); }}
           className="text-sm font-semibold text-brand-600 hover:text-brand-700"
         >
           Add another email
