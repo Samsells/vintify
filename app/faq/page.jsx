@@ -130,7 +130,7 @@ export default function FAQPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-12 sm:pt-16 lg:pt-20">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-ink-100 bg-white pt-8 pb-6 sm:pt-10 sm:pb-8">
         <div className="absolute inset-0 bg-grid-faint opacity-40" />

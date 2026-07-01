@@ -64,21 +64,14 @@ export const metadata = {
     title: 'Vintify — Vinted Accounting Software & Growth Bot for Resellers',
     description:
       'Track true profit per sale, automate listings with AI, drop prices automatically, and generate HMRC-ready tax reports — 55+ features, one subscription.',
-    images: [
-      {
-        url: '/logo/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'Vintify — Vinted Accounting Software & Growth Bot',
-      },
-    ],
+    // Share image comes from app/opengraph-image.jsx (generated at request
+    // time) — do not point at static files that may not exist.
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Vintify — Vinted Accounting Software & Growth Bot for Resellers',
     description:
       'Track true profit per sale, automate listings with AI, drop prices automatically, and generate HMRC-ready tax reports — 55+ features, one subscription.',
-    images: ['/logo/og-image.png'],
   },
   robots: {
     index: true,
@@ -123,7 +116,9 @@ const softwareAppJsonLd = {
 };
 
 export const viewport = {
-  themeColor: '#6355ff',
+  // Matches the brand blue (tailwind brand-500) — the old purple was a
+  // leftover from a previous palette and clashed with the site chrome.
+  themeColor: '#3b82f6',
   width: 'device-width',
   initialScale: 1,
 };

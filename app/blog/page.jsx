@@ -15,7 +15,7 @@ export const metadata = {
     description: 'Expert guides for Vinted resellers in the UK. Tax, pricing, shipping, sourcing, AI tools, and growth tactics.',
     url: 'https://vintify.co.uk/blog',
     type: 'website',
-    images: [{ url: '/logo/og-image.png', width: 1200, height: 630, alt: 'Vintify Blog — Vinted Reselling Tips & Guides' }],
+    // Share image inherited from app/opengraph-image.jsx
   },
   twitter: {
     title: 'Vintify Blog — Vinted Reselling Tips & Guides',
@@ -46,7 +46,7 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-12 sm:pt-16 lg:pt-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
 
       <section className="border-b border-ink-100 py-12 sm:py-20 lg:py-28">

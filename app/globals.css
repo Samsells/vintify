@@ -17,6 +17,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Visible keyboard focus everywhere — accessibility baseline */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   @apply bg-ink-50 text-ink-900;
   font-feature-settings: "cv06" on, "ss01" on;
@@ -57,12 +77,13 @@ body {
 
   .glass-card {
     @apply rounded-2xl border border-ink-200 bg-white p-8 transition-all duration-300;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    /* Shadows tinted with the ink/brand hue instead of flat black */
+    box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.06), 0 2px 4px -1px rgba(30, 58, 138, 0.04);
   }
 
   .glass-card:hover {
     @apply border-brand-500;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.08), 0 10px 10px -5px rgba(30, 58, 138, 0.03);
     transform: translateY(-4px);
   }
 
@@ -137,7 +158,12 @@ body {
   }
 
   .text-gradient {
+    /* Fallback for browsers without background-clip: text */
     color: #2563eb;
+    background-image: linear-gradient(100deg, #1d4ed8 0%, #3b82f6 55%, #6094fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .scrollbar-hide {

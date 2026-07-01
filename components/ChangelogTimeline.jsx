@@ -37,7 +37,7 @@ export default function ChangelogTimeline({ versions }) {
             <span className="mr-1 hidden font-mono text-xs uppercase tracking-wider text-ink-400 sm:inline">Filter updates:</span>
             <button
               onClick={() => setActiveTag(null)}
-              className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold transition-all hover:scale-105 ${
+              className={`flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all hover:scale-105 ${
                 activeTag === null
                   ? 'border-ink-900 bg-ink-900 text-white'
                   : 'border-ink-200 bg-white text-ink-600'
@@ -57,7 +57,7 @@ export default function ChangelogTimeline({ versions }) {
                 <button
                   key={tag}
                   onClick={() => setActiveTag(isActive ? null : tag)}
-                  className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-semibold transition-all hover:scale-105 ${
+                  className={`flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all hover:scale-105 ${
                     isActive
                       ? `${config.color} ring-2 ring-offset-1 ring-brand-300`
                       : config.color

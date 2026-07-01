@@ -9,13 +9,13 @@ const FOOTER_LINKS = {
     { href: '/pricing', label: 'Pricing' },
     { href: '/changelog', label: 'Changelog' },
     { href: '/faq', label: 'FAQ' },
-    { href: '/contact', label: 'Contact' },
     { href: LOGIN_URL, label: 'Log in', external: true },
   ],
   Company: [
     { href: '/about', label: 'About' },
     { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Get in touch' },
+    { href: '/security', label: 'Security' },
+    { href: '/contact', label: 'Contact' },
   ],
   Legal: [
     { href: '/privacy', label: 'Privacy Policy' },

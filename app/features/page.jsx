@@ -31,7 +31,7 @@ const STATS = [
 
 export default function FeaturesPage() {
   return (
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-12 sm:pt-16 lg:pt-20">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden border-b border-ink-100 bg-white pt-8 pb-8 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-16">
         <div className="absolute inset-0 bg-grid-faint opacity-40" />

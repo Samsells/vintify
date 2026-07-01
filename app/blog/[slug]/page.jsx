@@ -115,7 +115,7 @@ export default function BlogPostPage({ params }) {
   };
 
   return (
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-12 sm:pt-16 lg:pt-20">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 

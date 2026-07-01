@@ -23,7 +23,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-12 sm:pt-16 lg:pt-20">
       <section className="border-b border-ink-100 py-12 sm:py-20 lg:py-28">
         <div className="container-max container-px">
           <p className="section-label mb-6">About</p>

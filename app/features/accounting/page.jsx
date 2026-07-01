@@ -86,7 +86,7 @@ const DASHBOARD_FEATURES = [
 
 export default function AccountingPage() {
   return (
-    <div className="flex min-h-screen flex-col pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-16 lg:pt-20">
       <FeatureSubNav />
 
       {/* ── Hero ── */}
@@ -204,7 +204,7 @@ export default function AccountingPage() {
           <div className="mb-8 sm:mb-16 text-center">
             <p className="section-label mb-3">The Problems We Solve</p>
             <h2 className="font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-              Every reseller\'s accounting nightmare — solved.
+              Every reseller&apos;s accounting nightmare — solved.
             </h2>
           </div>
 
@@ -279,7 +279,7 @@ export default function AccountingPage() {
               Stop guessing. Start knowing.
             </h2>
             <p className="relative z-10 mx-auto mt-6 max-w-xl text-lg text-ink-500">
-              Join 5,000+ professional resellers who know their exact profit on every sale and never dread tax season again.
+              Know your exact profit on every sale — after fees, postage, and costs — and never dread tax season again.
             </p>
             <div className="relative z-10 mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 active:scale-95 sm:w-auto">

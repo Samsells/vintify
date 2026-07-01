@@ -25,7 +25,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-12 sm:pt-16 lg:pt-20">
 
       {/* ═══════════════════════════════════════════════════
           ANNOUNCEMENT BAR — £5 off first month
@@ -119,10 +119,10 @@ export default function Home() {
               Cancel anytime
             </div>
             <div className="hidden h-3.5 w-px bg-ink-200 sm:block" />
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
+            <Link href="/security" className="flex items-center gap-1.5 text-xs font-semibold text-ink-600 underline-offset-2 hover:text-brand-600 hover:underline">
               <ShieldCheck size={14} className="text-emerald-500" />
-              Cancel anytime
-            </div>
+              No Vinted password stored
+            </Link>
             <div className="hidden h-3.5 w-px bg-ink-200 sm:block" />
             <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
               <Clock size={14} className="text-brand-500" />
@@ -138,20 +138,14 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── Founding members avatar stack ── */}
+          {/* ── Founding member line — honest scarcity, no fabricated avatars ── */}
           <div
-            className="mx-auto mt-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
+            className="mx-auto mt-12 inline-flex flex-col items-center gap-2 rounded-2xl border border-amber-200 bg-amber-50/60 px-5 py-3 sm:flex-row sm:gap-3"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '400ms', opacity: 0 }}
           >
-            <div className="flex -space-x-2">
-              {['SJ', 'MT', 'RK', 'AL', 'JD'].map((initials, i) => (
-                <div key={i} className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-brand-500/10 font-display text-[10px] font-bold text-brand-600 shadow-sm" style={{ zIndex: 10 - i }}>
-                  {initials}
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-ink-500">
-              Join as a <span className="font-semibold text-brand-600">founding member</span> — lock in lifetime pricing before we launch publicly
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-700">Early access</span>
+            <p className="text-center text-sm text-ink-600 sm:text-left">
+              <span className="font-semibold text-ink-900">£69 lifetime</span> is a founding-member price — it goes away at public launch
             </p>
           </div>
         </div>
@@ -261,6 +255,76 @@ export default function Home() {
                 </div>
                 <p className="mt-4 text-center text-xs text-ink-400">or £69 lifetime · one-time payment</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          VS TYPICAL BOTS — the category gap Vintify fills
+      ═══════════════════════════════════════════════════ */}
+      <section className="bg-white py-16 sm:py-24">
+        <div className="container-max container-px">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+            {/* Left — narrative (deliberately left-aligned, not another centered block) */}
+            <div className="lg:w-2/5">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">Vintify vs typical Vinted bots</p>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+                Bots help you buy.<br />
+                <span className="text-gradient">Nobody helps you run the business.</span>
+              </h2>
+              <p className="mt-6 text-lg text-ink-500">
+                Sniper bots and monitors stop the moment you hit checkout. The unglamorous work — knowing your real profit, staying square with HMRC, keeping listings alive — is exactly what they leave behind, and exactly what Vintify does.
+              </p>
+              <p className="mt-4 text-sm text-ink-400">
+                Most bots also want your Vinted login. Vintify never asks for a password — <Link href="/security" className="font-semibold text-brand-600 underline-offset-2 hover:underline">here&apos;s how that works</Link>.
+              </p>
+            </div>
+
+            {/* Right — comparison table */}
+            <div className="flex-1 overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-sm">
+              <table className="w-full text-left">
+                <thead>
+                  <tr className="border-b border-ink-200 bg-ink-50">
+                    <th scope="col" className="p-4 text-xs font-bold uppercase tracking-wider text-ink-400">What you get</th>
+                    <th scope="col" className="p-4 text-center text-xs font-bold uppercase tracking-wider text-ink-400">Typical bot</th>
+                    <th scope="col" className="p-4 text-center text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-500/[0.04]">Vintify</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { label: 'True profit per sale (after fees & postage)', bot: false, us: true },
+                    { label: 'HMRC-ready tax reports', bot: false, us: true },
+                    { label: 'AI listing writer & bulk relisting', bot: false, us: true },
+                    { label: 'Auto price drops & buyer offers', bot: false, us: true },
+                    { label: 'Label printing & shipping workflow', bot: false, us: true },
+                    { label: 'Works without your Vinted password', bot: false, us: true },
+                    { label: 'One price, every feature', bot: false, us: true },
+                    { label: 'Deal sniping & purchase alerts', bot: true, us: 'via partner' },
+                  ].map((row, idx) => (
+                    <tr key={row.label} className={`border-b border-ink-100 last:border-0 ${idx % 2 ? 'bg-ink-50/40' : ''}`}>
+                      <td className="p-4 text-sm font-medium text-ink-700">{row.label}</td>
+                      <td className="p-4 text-center">
+                        {row.bot === true ? (
+                          <Check size={16} className="mx-auto text-emerald-500" aria-label="Included" />
+                        ) : (
+                          <X size={16} className="mx-auto text-ink-300" aria-label="Not included" />
+                        )}
+                      </td>
+                      <td className="p-4 text-center bg-brand-500/[0.03]">
+                        {row.us === true ? (
+                          <Check size={16} className="mx-auto text-brand-600" aria-label="Included" />
+                        ) : (
+                          <span className="text-xs font-semibold text-ink-500">{row.us}</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="border-t border-ink-100 p-4 text-xs text-ink-400">
+                Need sourcing alerts too? The full Vintify app is included in Resell Reserve&apos;s Ultimate plan alongside their monitor — see the section further down.
+              </p>
             </div>
           </div>
         </div>
@@ -603,10 +667,10 @@ export default function Home() {
               </div>
 
               <h2 className="relative z-10 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-                Lock in <span className="text-gradient">£69 lifetime</span> before launch
+                Lock in <span className="text-gradient">£69 lifetime</span> while it lasts
               </h2>
               <p className="relative z-10 mx-auto mt-6 max-w-xl text-lg text-ink-500">
-                Once Vintify goes public, lifetime access disappears and new members will pay £25/month. Right now, you can pay once and use it forever.
+                Vintify is live in early access. When it launches publicly, lifetime access disappears and new members pay £25/month — right now you can pay once and use it forever.
               </p>
 
               {/* Loss aversion framing */}
@@ -621,12 +685,19 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 size={18} className="shrink-0 text-emerald-500" />
-                  <span className="text-sm text-ink-700">7-day free trial when we launch</span>
+                  <span className="text-sm text-ink-700">7-day free trial first — cancel with one click</span>
                 </div>
               </div>
 
-              <p className="relative z-10 mt-6 text-center text-sm text-ink-500">
-                Drop your email — we'll let you know when it's ready.
+              <div className="relative z-10 mt-8 flex justify-center">
+                <a href={SIGNUP_URL} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+                  Start your 7-day free trial
+                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+
+              <p className="relative z-10 mt-10 text-center text-sm text-ink-500">
+                Not ready yet? Leave your email and we&apos;ll tell you before founding pricing ends.
               </p>
 
               <div className="relative z-10 mt-4">
@@ -634,7 +705,7 @@ export default function Home() {
               </div>
 
               <p className="relative z-10 mt-6 text-xs font-semibold uppercase tracking-widest text-ink-400">
-                No spam · unsubscribe anytime · 7-day free trial when we launch
+                No spam · unsubscribe anytime
               </p>
             </div>
           </div>

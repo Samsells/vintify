@@ -192,7 +192,7 @@ const totalFeatures = VERSIONS.filter(v => v.tags.includes('New Feature')).lengt
 
 export default function ChangelogPage() {
   return (
-    <div className="flex min-h-screen flex-col pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-12 sm:pt-16 lg:pt-20">
       {/* ── Hero — light SaaS style ── */}
       <section className="relative overflow-hidden border-b border-ink-100 bg-white py-12 sm:py-20 lg:py-28">
         <div className="absolute inset-0 bg-grid-faint opacity-40" />

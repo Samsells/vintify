@@ -81,7 +81,7 @@ const EXTRA_FEATURES = [
 
 export default function GrowthBotPage() {
   return (
-    <div className="flex min-h-screen flex-col pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col pt-16 lg:pt-20">
       <FeatureSubNav />
 
       {/* ── Hero ── */}

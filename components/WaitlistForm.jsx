@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle2, MailCheck, Loader2, AlertCircle } from 'lucid
 
 export default function WaitlistForm({ className = '' }) {
   const [email, setEmail] = useState('');
+  const [company, setCompany] = useState(''); // honeypot — hidden field, bots fill it
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [pending, setPending] = useState(false); // true = "check your inbox" (double opt-in)
   const [message, setMessage] = useState('');
@@ -19,7 +20,7 @@ export default function WaitlistForm({ className = '' }) {
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, company }),
       });
 
       const data = await res.json();
@@ -70,6 +71,17 @@ export default function WaitlistForm({ className = '' }) {
   return (
     <div className={className}>
       <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row sm:gap-2">
+        {/* Honeypot — invisible to real users */}
+        <input
+          type="text"
+          name="company"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="hidden"
+        />
         <input
           type="email"
           value={email}

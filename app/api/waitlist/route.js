@@ -1,6 +1,7 @@
 import crypto from 'node:crypto';
-import { query, initWaitlistTable } from '@/lib/db';
+import { query, initTables } from '@/lib/db';
 import { isEmailEnabled, sendConfirmationEmail } from '@/lib/email';
+import { rateLimit } from '@/lib/rateLimit';
 
 // Build an absolute origin (https://getvintify.com) from the incoming request so
 // confirmation links work on any domain/preview without hardcoding.
@@ -15,16 +16,32 @@ function originFrom(request) {
 
 export async function POST(request) {
   try {
-    await initWaitlistTable();
+    const { allowed } = rateLimit(request, { key: 'waitlist', limit: 5 });
+    if (!allowed) {
+      return Response.json({ error: 'Too many attempts. Please try again later.' }, { status: 429 });
+    }
 
-    const { email } = await request.json();
+    await initTables();
+
+    const { email, company } = await request.json();
+
+    // Honeypot — the visible form never sends `company`; bots that autofill
+    // every field do. Return a fake success so scripts learn nothing.
+    if (company) {
+      return Response.json(
+        { message: 'Check your inbox — click the link to confirm your spot.', pending: true },
+        { status: 200 }
+      );
+    }
+
     if (!email || !email.trim()) {
       return Response.json({ error: 'Email is required' }, { status: 400 });
     }
 
     const normalized = email.trim().toLowerCase();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(normalized)) {
+
+    if (normalized.length > 254 || !emailRegex.test(normalized)) {
       return Response.json({ error: 'Please enter a valid email' }, { status: 400 });
     }
 

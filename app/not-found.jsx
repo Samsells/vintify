@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center pt-12 sm:pt-16 lg:pt-20">
+    <div className="flex min-h-dvh flex-col items-center justify-center pt-12 sm:pt-16 lg:pt-20">
       <div className="container-max container-px relative z-10 text-center">
         <div className="absolute inset-0 bg-grid-faint opacity-30" />
         <div className="relative z-10">
