@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, AlertCircle, Check, X, Crown, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, AlertCircle, Check, X } from 'lucide-react';
 import { FeatureJourney } from '@/components/FeatureJourney';
 import HeroDashboard from '@/components/HeroDashboard';
 import WaitlistForm from '@/components/WaitlistForm';
@@ -526,101 +526,42 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           RESELL RESERVE ULTIMATE — Vintify is bundled in
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-ink-50 py-16 sm:py-24 lg:py-32">
+      <section className="border-y border-ink-200/30 bg-white py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-8 text-center sm:mb-12">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">Just getting into reselling?</p>
-            <h2 className="mx-auto mt-3 max-w-2xl font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-              Get Vintify <span className="text-gradient">bundled into Resell Reserve Ultimate.</span>
+          <div className="mx-auto max-w-3xl rounded-3xl border border-ink-200 bg-ink-50 p-8 text-center sm:p-12">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">New to reselling?</p>
+            <h2 className="mx-auto mt-3 max-w-xl font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+              Vintify is included in<br />
+              <span className="text-gradient">Resell Reserve Ultimate.</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-ink-500">
-              If you&apos;re brand new to Vinted reselling, Vintify pairs with a whole ecosystem. Resell Reserve is the sourcing monitor, automation, guides and community — and its Ultimate plan includes the full Vintify web app at no extra cost.
+            <p className="mx-auto mt-5 max-w-lg text-lg text-ink-500">
+              Just starting out? Resell Reserve helps you find the stock — a fast sourcing monitor, automation, guides and a community of resellers. The full Vintify web app is built in to run the numbers. One subscription, both sides of the business.
+            </p>
+
+            <p className="mx-auto mt-6 font-mono text-xs text-ink-400">
+              Sourcing monitor · Buying automation · Guides &amp; community · Vintify included
+            </p>
+
+            <div className="mt-8 flex justify-center">
+              <a
+                href={RESELL_RESERVE_PRICING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95"
+              >
+                Explore Resell Reserve Ultimate
+                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+
+            <p className="mt-5 text-sm text-ink-400">
+              Already selling?{' '}
+              <a href={SIGNUP_URL} className="font-semibold text-brand-600 underline-offset-2 hover:underline">
+                Get Vintify on its own from £25/mo
+              </a>
+              .
             </p>
           </div>
-
-          {/* Dark Resell Reserve panel — deliberately off-brand to signal a partner offer */}
-          <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-[#00E676]/25 bg-[#0B1220] p-6 shadow-2xl shadow-[#0B1220]/20 sm:p-10 lg:p-12">
-            {/* Ambient glows */}
-            <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-[#00E676]/10 blur-[100px]" />
-            <div className="pointer-events-none absolute -bottom-20 -left-10 h-56 w-56 rounded-full bg-[#00E676]/5 blur-[100px]" />
-            <div
-              className="pointer-events-none absolute inset-0 opacity-[0.04]"
-              style={{
-                backgroundImage:
-                  'linear-gradient(rgba(0,230,118,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(0,230,118,0.8) 1px, transparent 1px)',
-                backgroundSize: '44px 44px',
-              }}
-            />
-
-            <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
-              {/* Left — pitch */}
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1">
-                  <Crown size={13} className="text-amber-400" />
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-amber-300">Resell Reserve · Ultimate plan</span>
-                </div>
-
-                <h3 className="mt-5 font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
-                  The full Vintify web app,<br className="hidden sm:block" /> included free.
-                </h3>
-
-                <p className="mt-4 text-[15px] leading-relaxed text-white/60">
-                  Vintify runs <span className="font-semibold text-white/80">£25/mo</span> on its own. On Resell Reserve Ultimate it&apos;s built in — alongside everything you need to actually find and flip stock, so beginners get sourcing and back-office in one subscription.
-                </p>
-
-                <div className="mt-6 inline-flex items-center gap-2 rounded-xl border border-[#00E676]/25 bg-[#00E676]/[0.06] px-4 py-2.5">
-                  <Sparkles size={15} className="text-[#00E676]" />
-                  <span className="text-sm font-semibold text-white">Vintify (£25/mo value) — included at no extra cost</span>
-                </div>
-
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                  <a
-                    href={RESELL_RESERVE_PRICING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-2 rounded-xl bg-[#00E676] px-5 py-3.5 text-sm font-bold text-[#0B1220] shadow-lg shadow-[#00E676]/20 transition-all hover:scale-[1.02] hover:bg-[#00FF88] active:scale-95"
-                  >
-                    See Resell Reserve Ultimate
-                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                  </a>
-                  <span className="text-xs text-white/40">Opens resellreserve.co.uk</span>
-                </div>
-              </div>
-
-              {/* Right — what Ultimate adds around Vintify */}
-              <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 sm:p-6">
-                <p className="mb-4 text-[11px] font-bold uppercase tracking-wider text-white/40">
-                  Ultimate = Vintify + the full sourcing stack
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    { icon: Zap, title: 'Sub-1s Vinted monitor', desc: 'Instant alerts the moment a profitable listing drops.' },
-                    { icon: Bot, title: 'AutoBuy & AutoCop', desc: 'One-click checkout, plus fully automated 24/7 buying.' },
-                    { icon: Landmark, title: 'Full Vintify web app', desc: 'Accounting, growth bot, AI listings & HMRC-ready reports.' },
-                    { icon: ShieldCheck, title: 'Guides & private community', desc: 'Strategy guides and a room of serious UK & EU resellers.' },
-                  ].map((item) => (
-                    <li key={item.title} className="flex items-start gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#00E676]/20 bg-[#00E676]/10">
-                        <item.icon size={16} className="text-[#00E676]" />
-                      </span>
-                      <div>
-                        <p className="text-sm font-semibold text-white">{item.title}</p>
-                        <p className="text-[13px] leading-snug text-white/50">{item.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <p className="mt-6 text-center text-sm text-ink-400">
-            Already selling and just want the tools?{' '}
-            <a href={SIGNUP_URL} className="font-semibold text-brand-600 underline-offset-2 hover:underline">
-              Vintify works great on its own — start your free trial
-            </a>
-            .
-          </p>
         </div>
       </section>
 

@@ -155,19 +155,18 @@ export default function PricingPage() {
             href={RESELL_RESERVE_PRICING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mx-auto flex max-w-4xl flex-col items-start gap-4 overflow-hidden rounded-2xl border border-[#00E676]/25 bg-[#0B1220] p-5 transition-all hover:border-[#00E676]/45 sm:flex-row sm:items-center sm:gap-6 sm:p-6"
+            className="group mx-auto flex max-w-4xl flex-col items-start gap-4 rounded-2xl border border-ink-200 bg-ink-50 p-5 no-underline transition-all hover:border-brand-300 hover:shadow-md sm:flex-row sm:items-center sm:gap-6 sm:p-6"
           >
-            <div className="flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 shrink-0">
-              <Crown size={13} className="text-amber-400" />
-              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-300">Also included in</span>
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 transition-colors group-hover:bg-brand-500">
+              <Crown size={20} className="text-brand-600 transition-colors group-hover:text-white" />
             </div>
-            <p className="flex-1 text-sm leading-relaxed text-white/70 sm:text-[15px]">
-              Getting into Vinted reselling? The full Vintify web app is{' '}
-              <span className="font-semibold text-white">included free in Resell Reserve&apos;s Ultimate plan</span>{' '}
-              — bundled with a sub-1s sourcing monitor, AutoBuy/AutoCop automation, guides and community.
+            <p className="flex-1 text-sm leading-relaxed text-ink-600 sm:text-[15px]">
+              New to reselling? The full Vintify web app is{' '}
+              <span className="font-semibold text-ink-900">included in Resell Reserve&apos;s Ultimate plan</span>{' '}
+              — bundled with a sourcing monitor, buying automation, guides and community.
             </p>
-            <span className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00E676] shrink-0">
-              See Ultimate
+            <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-bold text-brand-600 shrink-0">
+              Explore Ultimate
               <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
             </span>
           </a>
