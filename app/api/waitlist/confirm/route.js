@@ -1,5 +1,5 @@
 import { query, initWaitlistTable } from '@/lib/db';
-import { sendWelcomeEmail } from '@/lib/email';
+import { sendWelcomeEmail, addToAudience } from '@/lib/email';
 
 function siteOrigin(request) {
   const env = process.env.NEXT_PUBLIC_SITE_URL;
@@ -34,6 +34,14 @@ export async function GET(request) {
       [token]
     );
 
+    // Add to the Resend Audience (for launch Broadcasts) and send the welcome
+    // email. Both are best-effort — a failure here must not undo the
+    // confirmation the user just completed.
+    try {
+      await addToAudience(email);
+    } catch (audErr) {
+      console.error('Audience sync failed (confirmation still saved):', audErr);
+    }
     try {
       await sendWelcomeEmail(email);
     } catch (mailErr) {
