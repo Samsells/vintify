@@ -4,7 +4,7 @@ import { FeatureJourney } from '@/components/FeatureJourney';
 import HeroDashboard from '@/components/HeroDashboard';
 import WaitlistForm from '@/components/WaitlistForm';
 import FAQAccordion from '@/components/FAQAccordion';
-import { SIGNUP_URL, RESELL_RESERVE_PRICING_URL } from '@/lib/site';
+import { signupUrl, SIGNUP_URL, RESELL_RESERVE_PRICING_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Vintify — Vinted Accounting, Growth Bot & AI Listings for Resellers',
@@ -100,7 +100,7 @@ export default function Home() {
             className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '240ms', opacity: 0 }}
           >
-            <a href={SIGNUP_URL} className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
+            <a href={signupUrl('monthly')} className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
               Start free trial
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
@@ -412,7 +412,7 @@ export default function Home() {
 
           {/* Arrow connector for desktop */}
           <div className="mt-8 hidden items-center justify-center gap-3 md:flex">
-            <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+            <a href={signupUrl('monthly')} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
               Start 7-day free trial
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
@@ -480,7 +480,7 @@ export default function Home() {
                 ))}
               </ul>
 
-              <a href={SIGNUP_URL} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+              <a href={signupUrl('monthly')} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
                 Start 7-day free trial
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
@@ -510,7 +510,7 @@ export default function Home() {
                 ))}
               </ul>
 
-              <a href={SIGNUP_URL} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-emerald-500/40 active:scale-95">
+              <a href={signupUrl('lifetime')} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-emerald-500/40 active:scale-95">
                 Lock in lifetime access
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>

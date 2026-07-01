@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Check, ArrowRight, AlertCircle, Lock, Shield, Zap, RefreshCw, Crown } from 'lucide-react';
-import { SIGNUP_URL, RESELL_RESERVE_PRICING_URL } from '@/lib/site';
+import { signupUrl, RESELL_RESERVE_PRICING_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Pricing — £25/mo or £69 Lifetime | Vintify',
@@ -98,7 +98,7 @@ export default function PricingPage() {
                 ))}
               </ul>
 
-              <a href={SIGNUP_URL} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+              <a href={signupUrl('monthly')} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
                 Start 7-day free trial
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
@@ -128,7 +128,7 @@ export default function PricingPage() {
                 ))}
               </ul>
 
-              <a href={SIGNUP_URL} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-bold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-emerald-500/40 active:scale-95">
+              <a href={signupUrl('lifetime')} className="group mt-8 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-4 text-base font-bold text-white shadow-lg shadow-emerald-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-emerald-500/40 active:scale-95">
                 Lock in lifetime access
                 <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </a>
@@ -225,7 +225,7 @@ export default function PricingPage() {
             Once Vintify goes public, lifetime access disappears and new members will pay £25/month. Right now, you can pay once and use it forever.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <a href={SIGNUP_URL} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+            <a href={signupUrl('monthly')} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
               Start 7-day free trial
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
