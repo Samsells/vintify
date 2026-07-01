@@ -97,7 +97,7 @@ export default function WaitlistForm({ className = '' }) {
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-500/25 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 disabled:opacity-50 disabled:hover:scale-100 sm:px-8"
+          className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-500/25 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 disabled:opacity-50 disabled:hover:scale-100 sm:px-8"
         >
           {status === 'loading' ? (
             <>

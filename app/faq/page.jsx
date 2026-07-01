@@ -204,7 +204,7 @@ export default function FAQPage() {
             We're happy to help. Get in touch and we'll get back to you within 24 hours.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+            <Link href="/contact" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
               Contact us
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </Link>

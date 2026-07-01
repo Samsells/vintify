@@ -73,7 +73,7 @@ export default function BlogPage() {
                     alt={post.imageAlt}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-6">

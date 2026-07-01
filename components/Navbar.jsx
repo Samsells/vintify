@@ -69,7 +69,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+          <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
             Sign up
           </a>
         </div>

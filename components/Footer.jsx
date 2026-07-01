@@ -43,7 +43,7 @@ export function Footer() {
             <p className="max-w-sm text-sm leading-relaxed text-ink-500">
               The all-in-one platform for Vinted resellers. Accounting, growth automation, sourcing, and analytics — 55+ features, one subscription.
             </p>
-            <a href={SIGNUP_URL} className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+            <a href={SIGNUP_URL} className="group mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
               Start free trial
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>

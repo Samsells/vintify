@@ -47,7 +47,7 @@ export default function FeaturesPage() {
             Accounting, growth automation, sourcing, selling, fulfilment, and analytics — everything you need to run a profitable Vinted business, in one place.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <a href={SIGNUP_URL} className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
+            <a href={SIGNUP_URL} className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
               Start free trial
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
@@ -135,7 +135,7 @@ export default function FeaturesPage() {
             7-day free trial. Cancel anytime. Set up in under 5 minutes.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Link href="/pricing" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+            <Link href="/pricing" className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
               See pricing
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </Link>

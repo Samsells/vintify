@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import InteractiveDashboard from './InteractiveDashboard';
+import CrmMockup from './CrmMockup';
 
 export default function HeroDashboard() {
   const containerRef = useRef(null);
@@ -70,27 +70,31 @@ export default function HeroDashboard() {
           className="pointer-events-none absolute left-1/2 top-1/2 z-10 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-400/15 blur-3xl"
         />
 
-        {/* Browser bar */}
+        {/* Browser bar — light chrome to match the real (light-themed) app */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.4 }}
-          className="relative z-20 flex items-center gap-2 border-b border-ink-200 bg-ink-100/40 px-4 py-3"
+          className="relative z-20 flex items-center gap-2 px-4 py-3"
+          style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(15,23,42,0.06)' }}
         >
-          <div className="h-2.5 w-2.5 rounded-full bg-accent-400" />
-          <div className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-          <div className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-          <div className="ml-3 flex h-6 flex-1 items-center rounded-full border border-ink-200 bg-white px-4 font-mono text-[10px] text-ink-400">
-            app.vintify.co.uk/dashboard
+          <div className="h-2.5 w-2.5 rounded-full" style={{ background: '#EF4444' }} />
+          <div className="h-2.5 w-2.5 rounded-full" style={{ background: '#F59E0B' }} />
+          <div className="h-2.5 w-2.5 rounded-full" style={{ background: '#10B981' }} />
+          <div
+            className="ml-3 flex h-6 flex-1 items-center rounded-full px-4 font-mono text-[10px]"
+            style={{ background: '#F1F4F9', border: '1px solid rgba(15,23,42,0.06)', color: '#64748B' }}
+          >
+            app.vintify.co.uk/crm/dashboard
           </div>
         </motion.div>
 
-        {/* Interactive product dashboard */}
+        {/* The real product — faithful static mockup of /crm/dashboard */}
         <motion.div
-          style={{ scale: imgScale }}
-          className="relative w-full overflow-hidden bg-ink-50/30"
+          style={{ scale: imgScale, background: '#F6F8FB' }}
+          className="relative w-full overflow-hidden"
         >
-          <InteractiveDashboard />
+          <CrmMockup />
         </motion.div>
       </motion.div>
     </div>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, AlertCircle, Check, X } from 'lucide-react';
-import { FeatureJourney } from '@/components/FeatureJourney';
+import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, AlertCircle, Check } from 'lucide-react';
+import { PlatformFeatures } from '@/components/PlatformFeatures';
 import HeroDashboard from '@/components/HeroDashboard';
 import WaitlistForm from '@/components/WaitlistForm';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -30,11 +30,10 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           ANNOUNCEMENT BAR — £5 off first month
       ═══════════════════════════════════════════════════ */}
-      <div className="bg-brand-400 text-white/95">
-        <div className="container-max container-px flex items-center justify-center gap-2 py-1 text-center">
-          <span className="text-[13px] font-medium tracking-wide">Get £5 off your first month</span>
-          <span className="text-[13px] opacity-70">— use code</span>
-          <span className="rounded-md bg-white/15 px-2 py-0.5 text-[13px] font-semibold tracking-wider backdrop-blur-sm">VINTIFY5</span>
+      <div className="border-b border-ink-200 bg-ink-100">
+        <div className="container-max container-px flex items-center justify-center gap-2 py-1.5 text-center">
+          <span className="text-[13px] font-medium tracking-wide text-ink-600">£5 off your first month with code</span>
+          <span className="rounded-md border border-brand-500/30 bg-brand-500/10 px-2 py-0.5 font-mono text-[12px] font-semibold tracking-wider text-brand-600">VINTIFY5</span>
         </div>
       </div>
 
@@ -50,14 +49,11 @@ export default function Home() {
         <div className="container-max container-px relative z-10 text-center">
           {/* Badge */}
           <div
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/5 px-4 py-1.5"
+            className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-ink-200 bg-white px-4 py-1.5"
             style={{ animation: 'fadeUp 0.5s ease-out forwards' }}
           >
-            <span className="flex h-2 w-2">
-              <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-brand-500 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
-            </span>
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">New: AI listing writer is live</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-500">Accounting · Growth · Automation — for Vinted</span>
           </div>
 
           {/* Headline */}
@@ -66,24 +62,7 @@ export default function Home() {
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '80ms', opacity: 0 }}
           >
             The all-in-one platform<br /> built for{' '}
-            <span className="relative inline-block pb-4">
-              <span className="text-gradient">serious Vinted sellers</span>
-              <svg
-                className="absolute bottom-0 left-0 h-3 w-full"
-                viewBox="0 0 300 12"
-                fill="none"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path
-                  d="M2 10C40 9 80 7 120 5C160 3 200 4 240 2C270 1 285 2 298 1"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  className="text-brand-400"
-                />
-              </svg>
-            </span>
+            <span className="text-gradient">serious Vinted sellers</span>
           </h1>
 
           {/* Sub copy */}
@@ -100,7 +79,7 @@ export default function Home() {
             className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '240ms', opacity: 0 }}
           >
-            <a href={signupUrl('monthly')} className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
+            <a href={signupUrl('monthly')} className="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95 sm:w-auto">
               Start free trial
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
@@ -109,25 +88,27 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Trust signals — risk reversal row */}
+          {/* Trust signals — quiet, structured risk-reversal row */}
           <div
-            className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-5"
+            className="mx-auto mt-7 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '320ms', opacity: 0 }}
           >
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
-              <CheckCircle2 size={14} className="text-emerald-500" />
-              Cancel anytime
-            </div>
-            <div className="hidden h-3.5 w-px bg-ink-200 sm:block" />
-            <Link href="/security" className="flex items-center gap-1.5 text-xs font-semibold text-ink-600 underline-offset-2 hover:text-brand-600 hover:underline">
-              <ShieldCheck size={14} className="text-emerald-500" />
-              No Vinted password stored
+            <Link href="/security" className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500 underline-offset-4 transition-colors hover:text-brand-600 hover:underline">
+              <ShieldCheck size={13} className="text-brand-600" />
+              No password stored
             </Link>
-            <div className="hidden h-3.5 w-px bg-ink-200 sm:block" />
-            <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
-              <Clock size={14} className="text-brand-500" />
-              Set up in under 5 minutes
-            </div>
+            <span className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500">
+              <Lock size={13} className="text-brand-600" />
+              GDPR-compliant
+            </span>
+            <span className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500">
+              <CheckCircle2 size={13} className="text-brand-600" />
+              Payments by Stripe
+            </span>
+            <span className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500">
+              <Clock size={13} className="text-brand-600" />
+              Cancel anytime
+            </span>
           </div>
 
           {/* ── Product dashboard mockup (scroll parallax) ── */}
@@ -255,76 +236,6 @@ export default function Home() {
                 </div>
                 <p className="mt-4 text-center text-xs text-ink-400">or £69 lifetime · one-time payment</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          VS TYPICAL BOTS — the category gap Vintify fills
-      ═══════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 sm:py-24">
-        <div className="container-max container-px">
-          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
-            {/* Left — narrative (deliberately left-aligned, not another centered block) */}
-            <div className="lg:w-2/5">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">Vintify vs typical Vinted bots</p>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-                Bots help you buy.<br />
-                <span className="text-gradient">Nobody helps you run the business.</span>
-              </h2>
-              <p className="mt-6 text-lg text-ink-500">
-                Sniper bots and monitors stop the moment you hit checkout. The unglamorous work — knowing your real profit, staying square with HMRC, keeping listings alive — is exactly what they leave behind, and exactly what Vintify does.
-              </p>
-              <p className="mt-4 text-sm text-ink-400">
-                Most bots also want your Vinted login. Vintify never asks for a password — <Link href="/security" className="font-semibold text-brand-600 underline-offset-2 hover:underline">here&apos;s how that works</Link>.
-              </p>
-            </div>
-
-            {/* Right — comparison table */}
-            <div className="flex-1 overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-sm">
-              <table className="w-full text-left">
-                <thead>
-                  <tr className="border-b border-ink-200 bg-ink-50">
-                    <th scope="col" className="p-4 text-xs font-bold uppercase tracking-wider text-ink-400">What you get</th>
-                    <th scope="col" className="p-4 text-center text-xs font-bold uppercase tracking-wider text-ink-400">Typical bot</th>
-                    <th scope="col" className="p-4 text-center text-xs font-bold uppercase tracking-wider text-brand-600 bg-brand-500/[0.04]">Vintify</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { label: 'True profit per sale (after fees & postage)', bot: false, us: true },
-                    { label: 'HMRC-ready tax reports', bot: false, us: true },
-                    { label: 'AI listing writer & bulk relisting', bot: false, us: true },
-                    { label: 'Auto price drops & buyer offers', bot: false, us: true },
-                    { label: 'Label printing & shipping workflow', bot: false, us: true },
-                    { label: 'Works without your Vinted password', bot: false, us: true },
-                    { label: 'One price, every feature', bot: false, us: true },
-                    { label: 'Deal sniping & purchase alerts', bot: true, us: 'via partner' },
-                  ].map((row, idx) => (
-                    <tr key={row.label} className={`border-b border-ink-100 last:border-0 ${idx % 2 ? 'bg-ink-50/40' : ''}`}>
-                      <td className="p-4 text-sm font-medium text-ink-700">{row.label}</td>
-                      <td className="p-4 text-center">
-                        {row.bot === true ? (
-                          <Check size={16} className="mx-auto text-emerald-500" aria-label="Included" />
-                        ) : (
-                          <X size={16} className="mx-auto text-ink-300" aria-label="Not included" />
-                        )}
-                      </td>
-                      <td className="p-4 text-center bg-brand-500/[0.03]">
-                        {row.us === true ? (
-                          <Check size={16} className="mx-auto text-brand-600" aria-label="Included" />
-                        ) : (
-                          <span className="text-xs font-semibold text-ink-500">{row.us}</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p className="border-t border-ink-100 p-4 text-xs text-ink-400">
-                Need sourcing alerts too? The full Vintify app is included in Resell Reserve&apos;s Ultimate plan alongside their monitor — see the section further down.
-              </p>
             </div>
           </div>
         </div>
@@ -476,7 +387,7 @@ export default function Home() {
 
           {/* Arrow connector for desktop */}
           <div className="mt-8 hidden items-center justify-center gap-3 md:flex">
-            <a href={signupUrl('monthly')} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+            <a href={signupUrl('monthly')} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
               Start 7-day free trial
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
@@ -485,18 +396,29 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          FEATURE JOURNEY — Every tool in the box
+          THE PLATFORM — 55+ features, structured
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-white py-16 sm:py-24 lg:py-32">
+      <section className="border-y border-ink-200/60 bg-white py-16 sm:py-24">
         <div className="container-max container-px">
-          <div className="mb-10 text-center sm:mb-16">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">Every tool in the box</p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-              From bought to sold,<br />
-              <span className="text-gradient">Vintify handles the lot.</span>
-            </h2>
+          <div className="mb-10 flex flex-col gap-6 sm:mb-14 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-2xl">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">The platform</p>
+              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+                55+ features. Every stage of the sale.
+              </h2>
+              <p className="mt-4 text-lg text-ink-500">
+                From the moment you buy stock to the day HMRC asks for numbers, each step has purpose-built tooling — all included, on every plan.
+              </p>
+            </div>
+            <Link
+              href="/features"
+              className="group inline-flex shrink-0 items-center gap-2 rounded-xl border border-ink-200 bg-white px-5 py-3 text-sm font-semibold text-ink-900 transition-all hover:border-brand-300"
+            >
+              Full feature list
+              <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+            </Link>
           </div>
-          <FeatureJourney />
+          <PlatformFeatures />
         </div>
       </section>
 
@@ -690,7 +612,7 @@ export default function Home() {
               </div>
 
               <div className="relative z-10 mt-8 flex justify-center">
-                <a href={SIGNUP_URL} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
+                <a href={SIGNUP_URL} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
                   Start your 7-day free trial
                   <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </a>

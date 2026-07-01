@@ -104,7 +104,7 @@ export default function AccountingPage() {
               Stop guessing. Stop spreadsheeting. Vintify calculates true profit on every single Vinted sale — after fees, shipping, and expenses — and gives you HMRC-ready reports in one click.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 active:scale-95 sm:w-auto">
+              <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] active:scale-95 sm:w-auto">
                 Start free trial <ArrowRight size={18} />
               </a>
               <Link href="/features" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-ink-200 px-8 py-4 text-lg font-bold text-ink-900 transition-all hover:bg-ink-100 sm:w-auto">
@@ -282,7 +282,7 @@ export default function AccountingPage() {
               Know your exact profit on every sale — after fees, postage, and costs — and never dread tax season again.
             </p>
             <div className="relative z-10 mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-105 active:scale-95 sm:w-auto">
+              <a href={SIGNUP_URL} className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-lg font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] active:scale-95 sm:w-auto">
                 Start free trial <ArrowRight size={18} />
               </a>
               <Link href="/features/growth-bot" className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-ink-200 px-8 py-4 text-lg font-bold text-ink-900 transition-all hover:bg-ink-100 sm:w-auto">

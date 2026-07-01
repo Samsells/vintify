@@ -37,7 +37,7 @@ export default function ChangelogTimeline({ versions }) {
             <span className="mr-1 hidden font-mono text-xs uppercase tracking-wider text-ink-400 sm:inline">Filter updates:</span>
             <button
               onClick={() => setActiveTag(null)}
-              className={`flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all hover:scale-105 ${
+              className={`flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all hover:scale-[1.02] ${
                 activeTag === null
                   ? 'border-ink-900 bg-ink-900 text-white'
                   : 'border-ink-200 bg-white text-ink-600'
@@ -57,7 +57,7 @@ export default function ChangelogTimeline({ versions }) {
                 <button
                   key={tag}
                   onClick={() => setActiveTag(isActive ? null : tag)}
-                  className={`flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all hover:scale-105 ${
+                  className={`flex min-h-[36px] items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-xs font-semibold transition-all hover:scale-[1.02] ${
                     isActive
                       ? `${config.color} ring-2 ring-offset-1 ring-brand-300`
                       : config.color
@@ -199,7 +199,7 @@ export default function ChangelogTimeline({ versions }) {
           {/* CTA */}
           <div className="mt-4 text-center">
             <p className="mb-4 font-mono text-xs uppercase tracking-wider text-ink-400">Want all these features?</p>
-            <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-105 hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
+            <a href={SIGNUP_URL} className="group inline-flex items-center gap-2 rounded-xl bg-brand-500 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/30 active:scale-95">
               Start your 7-day free trial
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </a>
