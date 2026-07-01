@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { Check, ArrowRight, AlertCircle, Lock, Shield, Zap, RefreshCw } from 'lucide-react';
-import { SIGNUP_URL } from '@/lib/site';
+import { Check, ArrowRight, AlertCircle, Lock, Shield, Zap, RefreshCw, Crown } from 'lucide-react';
+import { SIGNUP_URL, RESELL_RESERVE_PRICING_URL } from '@/lib/site';
 
 export const metadata = {
   title: 'Pricing — £25/mo or £69 Lifetime | Vintify',
@@ -145,6 +145,32 @@ export default function PricingPage() {
             <span className="text-ink-200">·</span>
             <span className="flex items-center gap-2"><Check size={16} className="text-brand-600" /> 7-day free trial</span>
           </div>
+        </div>
+      </section>
+
+      {/* ── Included with Resell Reserve Ultimate ── */}
+      <section className="bg-white pb-6 sm:pb-10">
+        <div className="container-max container-px">
+          <a
+            href={RESELL_RESERVE_PRICING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mx-auto flex max-w-4xl flex-col items-start gap-4 overflow-hidden rounded-2xl border border-[#00E676]/25 bg-[#0B1220] p-5 transition-all hover:border-[#00E676]/45 sm:flex-row sm:items-center sm:gap-6 sm:p-6"
+          >
+            <div className="flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 shrink-0">
+              <Crown size={13} className="text-amber-400" />
+              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-300">Also included in</span>
+            </div>
+            <p className="flex-1 text-sm leading-relaxed text-white/70 sm:text-[15px]">
+              Getting into Vinted reselling? The full Vintify web app is{' '}
+              <span className="font-semibold text-white">included free in Resell Reserve&apos;s Ultimate plan</span>{' '}
+              — bundled with a sub-1s sourcing monitor, AutoBuy/AutoCop automation, guides and community.
+            </p>
+            <span className="inline-flex items-center gap-1.5 text-sm font-bold text-[#00E676] shrink-0">
+              See Ultimate
+              <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+            </span>
+          </a>
         </div>
       </section>
 

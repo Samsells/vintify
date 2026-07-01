@@ -42,6 +42,10 @@ const FAQS = [
     q: 'Is my data safe?',
     a: 'Yes. All data is encrypted in transit and at rest. We\'re UK-based and privacy-first. You can export or delete all your data at any time from Settings.',
   },
+  {
+    q: 'Is Vintify part of Resell Reserve?',
+    a: 'Yes. If you\'re getting into Vinted reselling, the full Vintify web app is included free in Resell Reserve\'s Ultimate plan — bundled alongside their sub-1s sourcing monitor, AutoBuy/AutoCop automation, guides and community. You can also use Vintify on its own from £25/mo. Either way you get the same tools.',
+  },
 ];
 
 const TRUST_SIGNALS = [
