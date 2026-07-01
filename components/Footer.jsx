@@ -33,7 +33,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="mb-5 block">
               <Image
-                src="/logo/logo-full.png"
+                src="/logo/logo-full-black.png"
                 alt="Vintify"
                 width={180}
                 height={50}

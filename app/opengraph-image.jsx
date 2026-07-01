@@ -18,7 +18,7 @@ export default function OgImage() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           padding: 72,
-          background: 'linear-gradient(135deg, #f9f9ff 0%, #eff6ff 55%, #dbe8fe 100%)',
+          background: 'linear-gradient(135deg, #0a0f1c 0%, #0d1424 55%, #101a30 100%)',
           fontFamily: 'sans-serif',
           position: 'relative',
         }}
@@ -29,8 +29,20 @@ export default function OgImage() {
             position: 'absolute',
             inset: 0,
             backgroundImage:
-              'linear-gradient(to right, rgba(37,99,235,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(37,99,235,0.06) 1px, transparent 1px)',
+              'linear-gradient(to right, rgba(96,148,250,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(96,148,250,0.07) 1px, transparent 1px)',
             backgroundSize: '60px 60px',
+          }}
+        />
+        {/* Blue glow */}
+        <div
+          style={{
+            position: 'absolute',
+            top: -220,
+            right: -160,
+            width: 640,
+            height: 640,
+            borderRadius: 9999,
+            background: 'radial-gradient(circle, rgba(59,130,246,0.28) 0%, rgba(59,130,246,0) 70%)',
           }}
         />
         {/* Wordmark */}
@@ -51,27 +63,27 @@ export default function OgImage() {
           >
             V
           </div>
-          <div style={{ fontSize: 40, fontWeight: 800, color: '#191b23' }}>Vintify</div>
+          <div style={{ fontSize: 40, fontWeight: 800, color: '#f3f5fb' }}>Vintify</div>
         </div>
 
         {/* Headline */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          <div style={{ fontSize: 68, fontWeight: 800, color: '#191b23', lineHeight: 1.05, letterSpacing: -2 }}>
+          <div style={{ fontSize: 68, fontWeight: 800, color: '#f3f5fb', lineHeight: 1.05, letterSpacing: -2 }}>
             The all-in-one platform for
           </div>
-          <div style={{ fontSize: 68, fontWeight: 800, color: '#2563eb', lineHeight: 1.05, letterSpacing: -2 }}>
+          <div style={{ fontSize: 68, fontWeight: 800, color: '#6094fa', lineHeight: 1.05, letterSpacing: -2 }}>
             serious Vinted sellers.
           </div>
         </div>
 
         {/* Footer strip */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 28, fontSize: 26, color: '#424754' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 28, fontSize: 26, color: '#98a1ba' }}>
           <div style={{ display: 'flex' }}>Profit tracking</div>
-          <div style={{ display: 'flex', color: '#93bbfd' }}>·</div>
+          <div style={{ display: 'flex', color: '#3b82f6' }}>·</div>
           <div style={{ display: 'flex' }}>HMRC-ready reports</div>
-          <div style={{ display: 'flex', color: '#93bbfd' }}>·</div>
+          <div style={{ display: 'flex', color: '#3b82f6' }}>·</div>
           <div style={{ display: 'flex' }}>Growth bot</div>
-          <div style={{ display: 'flex', color: '#93bbfd' }}>·</div>
+          <div style={{ display: 'flex', color: '#3b82f6' }}>·</div>
           <div style={{ display: 'flex' }}>AI listings</div>
         </div>
       </div>

@@ -43,7 +43,7 @@ export function Navbar() {
       <nav className="container-max container-px flex h-12 items-center justify-between sm:h-16 lg:h-20">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo/logo-full.png"
+            src="/logo/logo-full-black.png"
             alt="Vintify"
             width={240}
             height={72}

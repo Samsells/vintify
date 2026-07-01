@@ -9,9 +9,9 @@ const TAG_CONFIG = {
   'New Feature': { icon: Sparkles, color: 'bg-brand-500/10 text-brand-700 border-brand-200', dot: 'bg-brand-500' },
   'Improvement': { icon: Zap, color: 'bg-amber-500/10 text-amber-700 border-amber-200', dot: 'bg-amber-500' },
   'Bug Fix': { icon: Bug, color: 'bg-accent-500/10 text-accent-700 border-accent-200', dot: 'bg-accent-500' },
-  'Design': { icon: Palette, color: 'bg-purple-500/10 text-purple-700 border-purple-200', dot: 'bg-purple-500' },
+  'Design': { icon: Palette, color: 'bg-purple-500/10 text-purple-300 border-purple-500/30', dot: 'bg-purple-500' },
   'Security': { icon: Shield, color: 'bg-emerald-500/10 text-emerald-700 border-emerald-200', dot: 'bg-emerald-500' },
-  'Performance': { icon: Rocket, color: 'bg-blue-500/10 text-blue-700 border-blue-200', dot: 'bg-blue-500' },
+  'Performance': { icon: Rocket, color: 'bg-blue-500/10 text-blue-300 border-blue-500/30', dot: 'bg-blue-500' },
   'Maintenance': { icon: Wrench, color: 'bg-ink-500/10 text-ink-700 border-ink-200', dot: 'bg-ink-500' },
 };
 

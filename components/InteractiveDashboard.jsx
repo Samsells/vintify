@@ -130,7 +130,7 @@ export default function InteractiveDashboard() {
   const [timeRange, setTimeRange] = useState('30d');
 
   return (
-    <div className="flex w-full bg-[#f9f9ff]" style={{ minHeight: 520 }}>
+    <div className="flex w-full bg-ink-50" style={{ minHeight: 520 }}>
       {/* ═══ Sidebar — slides in from left ═══ */}
       <ThrowIn variant="slideLeft" delay={0.05} className="hidden sm:flex">
         <div className="flex w-48 shrink-0 flex-col border-r border-ink-200 bg-white" style={{ minHeight: 520 }}>

@@ -1,9 +1,9 @@
 import './globals.css';
-import { Hanken_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
+import { Bricolage_Grotesque, Inter, JetBrains_Mono } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
-const hankenGrotesk = Hanken_Grotesk({
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
@@ -116,16 +116,15 @@ const softwareAppJsonLd = {
 };
 
 export const viewport = {
-  // Matches the brand blue (tailwind brand-500) — the old purple was a
-  // leftover from a previous palette and clashed with the site chrome.
-  themeColor: '#3b82f6',
+  // Deep navy to match the dark theme's page background.
+  themeColor: '#0a0f1c',
   width: 'device-width',
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${hankenGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${bricolage.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"
