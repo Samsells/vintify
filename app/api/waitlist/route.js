@@ -76,6 +76,11 @@ export async function POST(request) {
     return Response.json({ message: "You're on the list! We'll be in touch soon." }, { status: 200 });
   } catch (err) {
     console.error('Waitlist API error:', err);
-    return Response.json({ error: 'Something went wrong. Please try again.' }, { status: 500 });
+    // TEMP DIAGNOSTIC: surface the real reason so we can fix config fast.
+    // Remove once the waitlist is confirmed working.
+    return Response.json(
+      { error: `Something went wrong. Please try again. [${err?.code || err?.name || 'ERR'}: ${err?.message || ''}]` },
+      { status: 500 }
+    );
   }
 }
