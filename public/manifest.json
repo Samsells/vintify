@@ -4,8 +4,8 @@
   "description": "All-in-one platform for Vinted resellers. Track profit, automate listings, generate HMRC-ready tax reports.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0f1c",
-  "theme_color": "#0a0f1c",
+  "background_color": "#f9f9ff",
+  "theme_color": "#3b82f6",
   "icons": [
     {
       "src": "/logo/app-icon.png",

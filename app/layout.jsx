@@ -1,9 +1,9 @@
 import './globals.css';
-import { Bricolage_Grotesque, Inter, JetBrains_Mono } from 'next/font/google';
+import { Hanken_Grotesk, Inter, JetBrains_Mono } from 'next/font/google';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
-const bricolage = Bricolage_Grotesque({
+const hankenGrotesk = Hanken_Grotesk({
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
@@ -117,14 +117,14 @@ const softwareAppJsonLd = {
 
 export const viewport = {
   // Deep navy to match the dark theme's page background.
-  themeColor: '#0a0f1c',
+  themeColor: '#3b82f6',
   width: 'device-width',
   initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${hankenGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <body className="font-sans antialiased">
         <script
           type="application/ld+json"

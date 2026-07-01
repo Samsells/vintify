@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, AlertCircle, Check } from 'lucide-react';
-import { PlatformFeatures } from '@/components/PlatformFeatures';
+import { FeatureJourney } from '@/components/FeatureJourney';
 import HeroDashboard from '@/components/HeroDashboard';
 import WaitlistForm from '@/components/WaitlistForm';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -30,10 +30,11 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           ANNOUNCEMENT BAR — £5 off first month
       ═══════════════════════════════════════════════════ */}
-      <div className="border-b border-ink-200 bg-ink-100">
-        <div className="container-max container-px flex items-center justify-center gap-2 py-1.5 text-center">
-          <span className="text-[13px] font-medium tracking-wide text-ink-600">£5 off your first month with code</span>
-          <span className="rounded-md border border-brand-500/30 bg-brand-500/10 px-2 py-0.5 font-mono text-[12px] font-semibold tracking-wider text-brand-600">VINTIFY5</span>
+      <div className="bg-brand-400 text-white/95">
+        <div className="container-max container-px flex items-center justify-center gap-2 py-1 text-center">
+          <span className="text-[13px] font-medium tracking-wide">Get £5 off your first month</span>
+          <span className="text-[13px] opacity-70">— use code</span>
+          <span className="rounded-md bg-white/15 px-2 py-0.5 text-[13px] font-semibold tracking-wider backdrop-blur-sm">VINTIFY5</span>
         </div>
       </div>
 
@@ -49,11 +50,14 @@ export default function Home() {
         <div className="container-max container-px relative z-10 text-center">
           {/* Badge */}
           <div
-            className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-ink-200 bg-white px-4 py-1.5"
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/5 px-4 py-1.5"
             style={{ animation: 'fadeUp 0.5s ease-out forwards' }}
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.15em] text-ink-500">Accounting · Growth · Automation — for Vinted</span>
+            <span className="flex h-2 w-2">
+              <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-brand-500 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
+            </span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">New: AI listing writer is live</span>
           </div>
 
           {/* Headline */}
@@ -62,7 +66,24 @@ export default function Home() {
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '80ms', opacity: 0 }}
           >
             The all-in-one platform<br /> built for{' '}
-            <span className="text-gradient">serious Vinted sellers</span>
+            <span className="relative inline-block pb-4">
+              <span className="text-gradient">serious Vinted sellers</span>
+              <svg
+                className="absolute bottom-0 left-0 h-3 w-full"
+                viewBox="0 0 300 12"
+                fill="none"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 10C40 9 80 7 120 5C160 3 200 4 240 2C270 1 285 2 298 1"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  className="text-brand-400"
+                />
+              </svg>
+            </span>
           </h1>
 
           {/* Sub copy */}
@@ -88,27 +109,25 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Trust signals — quiet, structured risk-reversal row */}
+          {/* Trust signals — risk reversal row */}
           <div
-            className="mx-auto mt-7 flex max-w-3xl flex-wrap items-center justify-center gap-x-6 gap-y-2"
+            className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-5"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '320ms', opacity: 0 }}
           >
-            <Link href="/security" className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500 underline-offset-4 transition-colors hover:text-brand-600 hover:underline">
-              <ShieldCheck size={13} className="text-brand-600" />
-              No password stored
-            </Link>
-            <span className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500">
-              <Lock size={13} className="text-brand-600" />
-              GDPR-compliant
-            </span>
-            <span className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500">
-              <CheckCircle2 size={13} className="text-brand-600" />
-              Payments by Stripe
-            </span>
-            <span className="flex items-center gap-1.5 font-mono text-[11px] font-medium uppercase tracking-wider text-ink-500">
-              <Clock size={13} className="text-brand-600" />
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
+              <CheckCircle2 size={14} className="text-emerald-500" />
               Cancel anytime
-            </span>
+            </div>
+            <div className="hidden h-3.5 w-px bg-ink-200 sm:block" />
+            <Link href="/security" className="flex items-center gap-1.5 text-xs font-semibold text-ink-600 transition-colors hover:text-brand-600">
+              <ShieldCheck size={14} className="text-emerald-500" />
+              No Vinted password stored
+            </Link>
+            <div className="hidden h-3.5 w-px bg-ink-200 sm:block" />
+            <div className="flex items-center gap-1.5 text-xs font-semibold text-ink-600">
+              <Clock size={14} className="text-brand-500" />
+              Set up in under 5 minutes
+            </div>
           </div>
 
           {/* ── Product dashboard mockup (scroll parallax) ── */}
@@ -119,14 +138,20 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── Founding member line — honest scarcity, no fabricated avatars ── */}
+          {/* ── Founding member line ── */}
           <div
-            className="mx-auto mt-12 inline-flex flex-col items-center gap-2 rounded-2xl border border-amber-200 bg-amber-50/60 px-5 py-3 sm:flex-row sm:gap-3"
+            className="mx-auto mt-12 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '400ms', opacity: 0 }}
           >
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-amber-700">Early access</span>
-            <p className="text-center text-sm text-ink-600 sm:text-left">
-              <span className="font-semibold text-ink-900">£69 lifetime</span> is a founding-member price — it goes away at public launch
+            <div className="flex -space-x-2">
+              {['SJ', 'MT', 'RK', 'AL', 'JD'].map((initials, i) => (
+                <div key={i} className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-brand-500/10 font-display text-[10px] font-bold text-brand-600 shadow-sm" style={{ zIndex: 10 - i }}>
+                  {initials}
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-ink-500">
+              Join as a <span className="font-semibold text-brand-600">founding member</span> — lock in lifetime pricing before we launch publicly
             </p>
           </div>
         </div>
@@ -396,29 +421,18 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════
-          THE PLATFORM — 55+ features, structured
+          FEATURE JOURNEY — Every tool in the box
       ═══════════════════════════════════════════════════ */}
-      <section className="border-y border-ink-200/60 bg-white py-16 sm:py-24">
+      <section className="bg-white py-16 sm:py-24 lg:py-32">
         <div className="container-max container-px">
-          <div className="mb-10 flex flex-col gap-6 sm:mb-14 lg:flex-row lg:items-end lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">The platform</p>
-              <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-                55+ features. Every stage of the sale.
-              </h2>
-              <p className="mt-4 text-lg text-ink-500">
-                From the moment you buy stock to the day HMRC asks for numbers, each step has purpose-built tooling — all included, on every plan.
-              </p>
-            </div>
-            <Link
-              href="/features"
-              className="group inline-flex shrink-0 items-center gap-2 rounded-xl border border-ink-200 bg-white px-5 py-3 text-sm font-semibold text-ink-900 transition-all hover:border-brand-300"
-            >
-              Full feature list
-              <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
-            </Link>
+          <div className="mb-10 text-center sm:mb-16">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">Every tool in the box</p>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+              From bought to sold,<br />
+              <span className="text-gradient">Vintify handles the lot.</span>
+            </h2>
           </div>
-          <PlatformFeatures />
+          <FeatureJourney />
         </div>
       </section>
 
@@ -589,10 +603,10 @@ export default function Home() {
               </div>
 
               <h2 className="relative z-10 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-                Lock in <span className="text-gradient">£69 lifetime</span> while it lasts
+                Lock in <span className="text-gradient">£69 lifetime</span> before launch
               </h2>
               <p className="relative z-10 mx-auto mt-6 max-w-xl text-lg text-ink-500">
-                Vintify is live in early access. When it launches publicly, lifetime access disappears and new members pay £25/month — right now you can pay once and use it forever.
+                Once Vintify goes public, lifetime access disappears and new members will pay £25/month. Right now, you can pay once and use it forever.
               </p>
 
               {/* Loss aversion framing */}
@@ -607,19 +621,12 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 size={18} className="shrink-0 text-emerald-500" />
-                  <span className="text-sm text-ink-700">7-day free trial first — cancel with one click</span>
+                  <span className="text-sm text-ink-700">7-day free trial when we launch</span>
                 </div>
               </div>
 
-              <div className="relative z-10 mt-8 flex justify-center">
-                <a href={SIGNUP_URL} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-brand-500/40 active:scale-95">
-                  Start your 7-day free trial
-                  <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-
-              <p className="relative z-10 mt-10 text-center text-sm text-ink-500">
-                Not ready yet? Leave your email and we&apos;ll tell you before founding pricing ends.
+              <p className="relative z-10 mt-6 text-center text-sm text-ink-500">
+                Drop your email — we&apos;ll let you know when it&apos;s ready.
               </p>
 
               <div className="relative z-10 mt-4">
@@ -627,7 +634,7 @@ export default function Home() {
               </div>
 
               <p className="relative z-10 mt-6 text-xs font-semibold uppercase tracking-widest text-ink-400">
-                No spam · unsubscribe anytime
+                No spam · unsubscribe anytime · 7-day free trial when we launch
               </p>
             </div>
           </div>

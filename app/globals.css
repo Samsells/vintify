@@ -3,10 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-display: 'Hanken Grotesk', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  color-scheme: dark;
 }
 
 * {
@@ -23,7 +22,7 @@ html {
 
 /* Visible keyboard focus everywhere — accessibility baseline */
 :focus-visible {
-  outline: 2px solid #6094fa;
+  outline: 2px solid #3b82f6;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -44,19 +43,6 @@ html {
 body {
   @apply bg-ink-50 text-ink-900;
   font-feature-settings: "cv06" on, "ss01" on;
-  position: relative;
-}
-
-/* Film grain — breaks the digital flatness of large dark surfaces.
-   Fixed, non-interactive, and cheap (tiny inline SVG, GPU-composited). */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @layer components {
@@ -94,18 +80,13 @@ body::after {
 
   .glass-card {
     @apply rounded-2xl border border-ink-200 bg-white p-8 transition-all duration-300;
-    /* Deep, blue-tinted shadows + a faint top edge highlight for depth on navy */
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.04),
-      0 4px 12px -2px rgba(2, 6, 18, 0.5);
+    /* Shadows tinted with the ink/brand hue instead of flat black */
+    box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.06), 0 2px 4px -1px rgba(30, 58, 138, 0.04);
   }
 
   .glass-card:hover {
     @apply border-brand-500;
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.06),
-      0 20px 40px -12px rgba(2, 6, 18, 0.7),
-      0 0 24px -6px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 20px 25px -5px rgba(30, 58, 138, 0.08), 0 10px 10px -5px rgba(30, 58, 138, 0.03);
     transform: translateY(-4px);
   }
 
@@ -164,14 +145,14 @@ body::after {
   }
 
   .bg-dotted {
-    background-image: radial-gradient(circle, #1c2740 1px, transparent 1px);
+    background-image: radial-gradient(circle, #e1e2ec 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
   .bg-grid-faint {
     background-image:
-      linear-gradient(to right, #131c33 1px, transparent 1px),
-      linear-gradient(to bottom, #131c33 1px, transparent 1px);
+      linear-gradient(to right, #f2f3fd 1px, transparent 1px),
+      linear-gradient(to bottom, #f2f3fd 1px, transparent 1px);
     background-size: 48px 48px;
   }
 
@@ -181,8 +162,8 @@ body::after {
 
   .text-gradient {
     /* Fallback for browsers without background-clip: text */
-    color: #6094fa;
-    background-image: linear-gradient(100deg, #bfd7fe 0%, #6094fa 55%, #3b82f6 100%);
+    color: #2563eb;
+    background-image: linear-gradient(100deg, #1d4ed8 0%, #3b82f6 55%, #6094fa 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -207,17 +188,17 @@ body::after {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1424;
+  background: #f2f3fd;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2b3757;
+  background: #c2c6d6;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #697390;
+  background: #727785;
 }
 
 ::selection {
   background: #3b82f6;
-  color: #fafbfe;
+  color: white;
 }
