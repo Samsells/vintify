@@ -15,9 +15,14 @@
 
 html {
   scroll-behavior: smooth;
-  /* Slightly reduced base size — everything is rem-based, so this "zooms
-     out" the whole site ~7% for a denser, more professional feel. */
-  font-size: 15px;
+}
+
+/* Zoom the whole site out uniformly (text, spacing, images, the dashboard
+   mockup — everything), like a browser zoom-out, for a more spacious, pro
+   feel. Media-query breakpoints still fire at the real viewport width, so
+   more content fits per screen. Tune this single value to taste. */
+body {
+  zoom: 0.9;
 }
 
 /* Visible keyboard focus everywhere — accessibility baseline */
