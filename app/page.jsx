@@ -62,17 +62,17 @@ export default function Home() {
               <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-brand-500 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
             </span>
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">A UK first · The all-in-one Vinted platform</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">Built in the UK · The first all-in-one Vinted platform</span>
           </div>
 
           {/* Headline */}
           <h1
-            className="mx-auto max-w-4xl font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-ink-900 sm:text-5xl lg:text-6xl"
+            className="mx-auto max-w-4xl font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-900 sm:text-5xl lg:text-[4.25rem]"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '80ms', opacity: 0 }}
           >
-            The all-in-one platform<br /> built for{' '}
+            Your Vinted shop is a business.<br />
             <span className="relative inline-block pb-4">
-              <span className="text-gradient">serious Vinted sellers</span>
+              <span className="text-gradient">Run it like one.</span>
               <svg
                 className="absolute bottom-0 left-0 h-3 w-full"
                 viewBox="0 0 300 12"
@@ -96,8 +96,8 @@ export default function Home() {
             className="mx-auto mt-6 max-w-2xl text-lg text-ink-500 sm:text-xl"
             style={{ animation: 'fadeUp 0.5s ease-out forwards', animationDelay: '160ms', opacity: 0 }}
           >
-            AI writes your listings, automations revive stale stock, and true profit is tracked on every sale.{' '}
-            <span className="font-semibold text-ink-900">HMRC-ready reports, 55+ features, one subscription.</span>
+            Vintify shows your real profit on every sale, writes and relists your items with AI, and drops prices while you sleep — then turns tax season into one click.{' '}
+            <span className="font-semibold text-ink-900">55+ tools. One subscription.</span>
           </p>
 
           {/* CTAs */}
@@ -181,24 +181,35 @@ export default function Home() {
           <div className="grid gap-4 sm:grid-cols-3">
             {[
               {
+                num: '01',
                 icon: Sparkles,
                 title: 'First of its kind',
-                body: 'The only platform that unites accounting, growth automation, and AI listings for Vinted — not five disconnected apps stitched together.',
+                body: 'One platform for accounting, growth automation and AI listings — not five disconnected apps and a spreadsheet holding it together.',
               },
               {
+                num: '02',
                 icon: Zap,
-                title: 'The most powerful on the market',
-                body: '55+ features that actually work together — from sourcing and repricing to HMRC-ready tax reports. Nothing else does this much.',
+                title: 'The most powerful there is',
+                body: '55+ tools that work as one system, from sourcing and repricing to HMRC-ready tax. No other Vinted tool comes close.',
               },
               {
+                num: '03',
                 icon: MapPin,
                 title: 'Built in the UK',
-                body: 'HMRC-ready by default, priced in pounds, and made for how UK resellers really sell — with support that gets it.',
+                body: 'HMRC-ready by default, priced in pounds, and made for how UK resellers actually sell — with support that gets it.',
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-2xl border border-ink-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10">
-                  <item.icon size={20} className="text-brand-600" />
+              <div
+                key={item.title}
+                className="group relative overflow-hidden rounded-2xl border border-ink-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5"
+              >
+                {/* top accent that fills on hover */}
+                <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand-500 to-brand-400 transition-transform duration-300 group-hover:scale-x-100" />
+                <div className="mb-5 flex items-center justify-between">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 transition-colors group-hover:bg-brand-500">
+                    <item.icon size={20} className="text-brand-600 transition-colors group-hover:text-white" />
+                  </div>
+                  <span className="font-mono text-xs font-semibold text-ink-300">{item.num}</span>
                 </div>
                 <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-ink-500">{item.body}</p>
