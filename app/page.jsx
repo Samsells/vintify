@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, Check, Sparkles, Zap, MapPin, Flame } from 'lucide-react';
+import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, Check, Sparkles, Zap, MapPin } from 'lucide-react';
 import { FeatureJourney } from '@/components/FeatureJourney';
 import HeroDashboard from '@/components/HeroDashboard';
 import WaitlistForm from '@/components/WaitlistForm';
@@ -649,12 +649,17 @@ export default function Home() {
       <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
           <div className="mx-auto max-w-3xl">
-            {/* Urgency banner — scarcity */}
-            <div className="mb-6 flex items-center justify-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2">
-              <Flame size={16} className="text-amber-600" />
-              <span className="text-sm font-semibold text-amber-700">
-                Only {FOUNDING_LICENCES_LEFT} of {FOUNDING_LICENCES_TOTAL} £69 lifetime licences left — then it&apos;s gone for good
-              </span>
+            {/* Founding access — scarcity, stated plainly */}
+            <div className="mb-6 flex justify-center">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-amber-200 bg-amber-50 px-4 py-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-amber-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+                </span>
+                <span className="text-sm font-semibold text-amber-700">
+                  Founding access · {FOUNDING_LICENCES_LEFT} of {FOUNDING_LICENCES_TOTAL} lifetime licences remaining
+                </span>
+              </div>
             </div>
 
             <div className="group relative overflow-hidden rounded-3xl border border-ink-200 bg-white p-6 text-center shadow-xl sm:p-12 sm:rounded-[40px] sm:p-16">
@@ -687,19 +692,19 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Loss aversion framing */}
-              <div className="relative z-10 mx-auto mt-8 max-w-md space-y-2 text-left">
+              {/* Value stack */}
+              <div className="relative z-10 mx-auto mt-8 max-w-md space-y-2.5 text-left">
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 size={18} className="shrink-0 text-emerald-500" />
-                  <span className="text-sm text-ink-700">£69 once — no recurring payments</span>
+                  <span className="text-sm text-ink-700">One payment of £69 — never billed again</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 size={18} className="shrink-0 text-emerald-500" />
-                  <span className="text-sm text-ink-700">All 55+ features included — no upsells</span>
+                  <span className="text-sm text-ink-700">All 55+ tools, plus every future update</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 size={18} className="shrink-0 text-emerald-500" />
-                  <span className="text-sm text-ink-700">7-day free trial when we launch</span>
+                  <span className="text-sm text-ink-700">Priority support, ahead of monthly members</span>
                 </div>
               </div>
 
