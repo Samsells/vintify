@@ -165,56 +165,83 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════
           POSITIONING — first of its kind · most powerful · UK-built
       ═══════════════════════════════════════════════════ */}
-      <section className="bg-ink-100 py-16 sm:py-24">
-        <div className="container-max container-px">
-          <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">A UK first</p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-              The first of its kind — and the{' '}
-              <span className="text-gradient">most powerful Vinted tool</span> on the market.
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-ink-500">
-              Vinted sellers have never had one platform that runs the entire business. Vintify is that platform — built in the UK, and there is nothing else like it.
-            </p>
-          </div>
+      <section className="relative overflow-hidden bg-ink-100 py-20 sm:py-28">
+        {/* soft ambient accent */}
+        <div className="pointer-events-none absolute -right-24 top-1/2 h-[420px] w-[420px] -translate-y-1/2 rounded-full bg-brand-500/[0.06] blur-glow" />
 
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                num: '01',
-                icon: Sparkles,
-                title: 'First of its kind',
-                body: 'One platform for accounting, growth automation and AI listings — not five disconnected apps and a spreadsheet holding it together.',
-              },
-              {
-                num: '02',
-                icon: Zap,
-                title: 'The most powerful there is',
-                body: '55+ tools that work as one system, from sourcing and repricing to HMRC-ready tax. No other Vinted tool comes close.',
-              },
-              {
-                num: '03',
-                icon: MapPin,
-                title: 'Built in the UK',
-                body: 'HMRC-ready by default, priced in pounds, and made for how UK resellers actually sell — with support that gets it.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="group relative overflow-hidden rounded-2xl border border-ink-200 bg-white p-6 transition-all hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/5"
-              >
-                {/* top accent that fills on hover */}
-                <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand-500 to-brand-400 transition-transform duration-300 group-hover:scale-x-100" />
-                <div className="mb-5 flex items-center justify-between">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10 transition-colors group-hover:bg-brand-500">
-                    <item.icon size={20} className="text-brand-600 transition-colors group-hover:text-white" />
+        <div className="container-max container-px relative">
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20">
+
+            {/* Left — statement + stat strip */}
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">A UK first</p>
+              <h2 className="mt-4 font-display text-4xl font-bold leading-[1.04] tracking-tight text-ink-900 sm:text-5xl">
+                Nothing else does{' '}
+                <span className="text-gradient">all of this.</span>
+              </h2>
+              <p className="mt-6 max-w-md text-lg text-ink-500">
+                Vinted sellers have never had one platform that runs the whole business — accounting, automation and AI, working as a single system. Vintify is it, and it is built in the UK.
+              </p>
+
+              {/* Stat strip */}
+              <div className="mt-10 flex items-center gap-8">
+                {[
+                  { n: '55+', l: 'tools in one' },
+                  { n: '1', l: 'subscription' },
+                  { n: '0', l: 'spreadsheets' },
+                ].map((s, i) => (
+                  <div key={s.l} className="flex items-center gap-8">
+                    {i > 0 && <span className="h-12 w-px bg-ink-200" />}
+                    <div>
+                      <div className="font-display text-4xl font-extrabold tracking-tight text-ink-900 sm:text-5xl">{s.n}</div>
+                      <div className="mt-1 text-sm text-ink-400">{s.l}</div>
+                    </div>
                   </div>
-                  <span className="font-mono text-xs font-semibold text-ink-300">{item.num}</span>
-                </div>
-                <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-500">{item.body}</p>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Right — the three claims as premium rows */}
+            <div className="space-y-3">
+              {[
+                {
+                  num: '01',
+                  icon: Sparkles,
+                  title: 'First of its kind',
+                  body: 'One platform for accounting, growth automation and AI listings — not five apps and a spreadsheet holding it together.',
+                },
+                {
+                  num: '02',
+                  icon: Zap,
+                  title: 'The most powerful there is',
+                  body: '55+ tools that work as one system, from sourcing and repricing to HMRC-ready tax. No other Vinted tool comes close.',
+                },
+                {
+                  num: '03',
+                  icon: MapPin,
+                  title: 'Built in the UK',
+                  body: 'HMRC-ready by default, priced in pounds, and made for how UK resellers actually sell — with support that gets it.',
+                },
+              ].map((item) => (
+                <div
+                  key={item.title}
+                  className="group relative flex items-start gap-5 overflow-hidden rounded-2xl border border-ink-200 bg-white p-5 transition-all hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/[0.06] sm:p-6"
+                >
+                  {/* left accent that grows on hover */}
+                  <span className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-gradient-to-b from-brand-500 to-brand-400 transition-transform duration-300 group-hover:scale-y-100" />
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-500/10 transition-colors group-hover:bg-brand-500">
+                    <item.icon size={22} className="text-brand-600 transition-colors group-hover:text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-baseline gap-2.5">
+                      <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+                      <span className="font-mono text-xs font-semibold text-ink-300">{item.num}</span>
+                    </div>
+                    <p className="mt-1.5 text-sm leading-relaxed text-ink-500">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
