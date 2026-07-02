@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, AlertCircle, Check } from 'lucide-react';
+import { ArrowRight, Landmark, TrendingUp, Bot, ShieldCheck, Clock, CheckCircle2, Lock, Check, Sparkles, Zap, MapPin, Flame } from 'lucide-react';
 import { FeatureJourney } from '@/components/FeatureJourney';
 import HeroDashboard from '@/components/HeroDashboard';
 import WaitlistForm from '@/components/WaitlistForm';
@@ -22,6 +22,11 @@ export const metadata = {
     description: 'Track true profit per sale, automate listings with AI, drop prices automatically, and generate HMRC-ready tax reports — 55+ features, one subscription.',
   },
 };
+
+// Founding lifetime licences — scarcity for the pre-launch offer.
+// PLACEHOLDER NUMBERS: update these as licences sell (or wire to a live count).
+const FOUNDING_LICENCES_TOTAL = 500;
+const FOUNDING_LICENCES_LEFT = 143;
 
 export default function Home() {
   return (
@@ -57,7 +62,7 @@ export default function Home() {
               <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-brand-500 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
             </span>
-            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">New: AI listing writer is live</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-brand-600">A UK first · The all-in-one Vinted platform</span>
           </div>
 
           {/* Headline */}
@@ -153,6 +158,52 @@ export default function Home() {
             <p className="text-sm text-ink-500">
               Join as a <span className="font-semibold text-brand-600">founding member</span> — lock in lifetime pricing before we launch publicly
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          POSITIONING — first of its kind · most powerful · UK-built
+      ═══════════════════════════════════════════════════ */}
+      <section className="bg-ink-100 py-16 sm:py-24">
+        <div className="container-max container-px">
+          <div className="mx-auto mb-10 max-w-3xl text-center sm:mb-14">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brand-600">A UK first</p>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
+              The first of its kind — and the{' '}
+              <span className="text-gradient">most powerful Vinted tool</span> on the market.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-lg text-ink-500">
+              Vinted sellers have never had one platform that runs the entire business. Vintify is that platform — built in the UK, and there is nothing else like it.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[
+              {
+                icon: Sparkles,
+                title: 'First of its kind',
+                body: 'The only platform that unites accounting, growth automation, and AI listings for Vinted — not five disconnected apps stitched together.',
+              },
+              {
+                icon: Zap,
+                title: 'The most powerful on the market',
+                body: '55+ features that actually work together — from sourcing and repricing to HMRC-ready tax reports. Nothing else does this much.',
+              },
+              {
+                icon: MapPin,
+                title: 'Built in the UK',
+                body: 'HMRC-ready by default, priced in pounds, and made for how UK resellers really sell — with support that gets it.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-2xl border border-ink-200 bg-white p-6 transition-all hover:border-brand-300 hover:shadow-md">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-500/10">
+                  <item.icon size={20} className="text-brand-600" />
+                </div>
+                <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-500">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -587,10 +638,12 @@ export default function Home() {
       <section className="bg-ink-100 py-16 sm:py-24">
         <div className="container-max container-px">
           <div className="mx-auto max-w-3xl">
-            {/* Urgency banner */}
+            {/* Urgency banner — scarcity */}
             <div className="mb-6 flex items-center justify-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-2">
-              <AlertCircle size={16} className="text-amber-600" />
-              <span className="text-sm font-semibold text-amber-700">Founding member pricing ends when we launch publicly</span>
+              <Flame size={16} className="text-amber-600" />
+              <span className="text-sm font-semibold text-amber-700">
+                Only {FOUNDING_LICENCES_LEFT} of {FOUNDING_LICENCES_TOTAL} £69 lifetime licences left — then it&apos;s gone for good
+              </span>
             </div>
 
             <div className="group relative overflow-hidden rounded-3xl border border-ink-200 bg-white p-6 text-center shadow-xl sm:p-12 sm:rounded-[40px] sm:p-16">
@@ -603,11 +656,25 @@ export default function Home() {
               </div>
 
               <h2 className="relative z-10 font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-                Lock in <span className="text-gradient">£69 lifetime</span> before launch
+                Be a founding member. <span className="text-gradient">£69 lifetime</span>, once.
               </h2>
               <p className="relative z-10 mx-auto mt-6 max-w-xl text-lg text-ink-500">
-                Once Vintify goes public, lifetime access disappears and new members will pay £25/month. Right now, you can pay once and use it forever.
+                A limited run of lifetime licences before public launch. When they&apos;re gone, the only way in is £25/month — forever. Get the UK&apos;s most powerful Vinted tool for a single payment.
               </p>
+
+              {/* Scarcity meter */}
+              <div className="relative z-10 mx-auto mt-8 max-w-md">
+                <div className="mb-1.5 flex items-center justify-between text-xs font-semibold">
+                  <span className="text-amber-700">{FOUNDING_LICENCES_LEFT} licences left</span>
+                  <span className="text-ink-400">{FOUNDING_LICENCES_TOTAL - FOUNDING_LICENCES_LEFT} claimed</span>
+                </div>
+                <div className="h-2 w-full overflow-hidden rounded-full bg-ink-200">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-amber-400 to-amber-500"
+                    style={{ width: `${Math.round(((FOUNDING_LICENCES_TOTAL - FOUNDING_LICENCES_LEFT) / FOUNDING_LICENCES_TOTAL) * 100)}%` }}
+                  />
+                </div>
+              </div>
 
               {/* Loss aversion framing */}
               <div className="relative z-10 mx-auto mt-8 max-w-md space-y-2 text-left">
