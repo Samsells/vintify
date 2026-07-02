@@ -130,9 +130,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* ── Product dashboard mockup (scroll parallax) ── */}
-          <div className="relative mx-auto mt-8 max-w-5xl">
-            <div className="absolute inset-x-8 -top-4 -bottom-4 rounded-[40px] bg-brand-500/8 blur-3xl" />
+          {/* ── Product dashboard mockup — wide, fades into the page ── */}
+          <div className="relative mx-auto mt-10 max-w-6xl">
+            <div className="absolute inset-x-8 -top-4 bottom-16 rounded-[40px] bg-brand-500/8 blur-3xl" />
             <div className="relative">
               <HeroDashboard />
             </div>

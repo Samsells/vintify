@@ -103,7 +103,7 @@ function StatBlock({ label, value, tone }) {
 
 export default function CrmMockup() {
   return (
-    <div className="flex w-full text-left" style={{ background: '#F6F8FB', minHeight: 460 }}>
+    <div className="flex w-full text-left" style={{ background: '#F6F8FB', minHeight: 540 }}>
       {/* ── Sidebar (real nav groups) ── */}
       <aside
         className="hidden w-[148px] shrink-0 flex-col sm:flex"

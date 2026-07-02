@@ -44,7 +44,7 @@ export default function HeroDashboard() {
   const imgScale = useTransform(smoothProgress, [0, 0.35, 1], [1.0, 1.0, 1.02]);
 
   return (
-    <div ref={containerRef} className="relative mx-auto max-w-5xl" style={{ perspective: 1400 }}>
+    <div ref={containerRef} className="relative mx-auto max-w-6xl" style={{ perspective: 1400 }}>
       {/* ═══ Far layer — ambient glow ═══ */}
       <motion.div
         style={{ y: glowY, scale: glowScale, opacity: glowOpacity }}
@@ -59,10 +59,12 @@ export default function HeroDashboard() {
           rotateX: frameRotateX,
           rotateY: frameRotateY,
           opacity: frameOpacity,
-          boxShadow: frameShadow,
+          // Soft, near-symmetric ambient shadow — no hard downward drop, so the
+          // faded bottom edge dissolves into the page instead of casting a line.
+          boxShadow: '0 8px 40px -24px rgba(15,23,42,0.25)',
           transformStyle: 'preserve-3d',
         }}
-        className="relative overflow-hidden rounded-2xl border border-ink-200 bg-white"
+        className="relative overflow-hidden rounded-t-2xl border border-b-0 border-ink-200 bg-white"
       >
         {/* Inner glow that intensifies as you scroll */}
         <motion.div
@@ -96,6 +98,11 @@ export default function HeroDashboard() {
         >
           <CrmMockup />
         </motion.div>
+
+        {/* Bottom fade — dissolves the dashboard into the page so the full
+            screen is teased, not given away (matches the reference). Fades to
+            the hero's white background. */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-30 h-1/2 bg-gradient-to-t from-white via-white/85 to-transparent" />
       </motion.div>
     </div>
   );
